@@ -1,0 +1,6 @@
+neurom.view.common.plot_limits
+==============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: plot_limits

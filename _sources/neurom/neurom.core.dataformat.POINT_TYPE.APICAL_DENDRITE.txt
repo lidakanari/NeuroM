@@ -1,0 +1,6 @@
+neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE
+=================================================
+
+.. currentmodule:: neurom.core.dataformat
+
+.. autoattribute:: POINT_TYPE.APICAL_DENDRITE

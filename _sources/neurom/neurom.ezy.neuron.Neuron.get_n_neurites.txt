@@ -1,0 +1,6 @@
+neurom.ezy.neuron.Neuron.get_n_neurites
+=======================================
+
+.. currentmodule:: neurom.ezy.neuron
+
+.. automethod:: Neuron.get_n_neurites

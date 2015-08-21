@@ -1,0 +1,6 @@
+neurom.ezy.neuron.Neuron.get_n_sections_per_neurite
+===================================================
+
+.. currentmodule:: neurom.ezy.neuron
+
+.. automethod:: Neuron.get_n_sections_per_neurite

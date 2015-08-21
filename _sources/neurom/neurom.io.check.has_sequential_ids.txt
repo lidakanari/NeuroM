@@ -1,0 +1,6 @@
+neurom.io.check.has_sequential_ids
+==================================
+
+.. currentmodule:: neurom.io.check
+
+.. autofunction:: has_sequential_ids

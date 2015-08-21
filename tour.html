@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A Tour of NeuroM &mdash; NeuroM 0.0.4.dev1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="NeuroM 0.0.4.dev1 documentation" href="index.html"/>
+        <link rel="next" title="NeuroM morphology definitions" href="definitions.html"/>
+        <link rel="prev" title="Quick and easy analysis" href="quick.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> NeuroM
+        
+
+        
+          
+          <img src="_static/bbp.jpg" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NeuroM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#virtualenv-setup">Virtualenv setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#neurom-installation">NeuroM installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-from-the-bbp-pypi-server">Install from the BBP PyPI server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-from-git">Install from git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-from-source">Install from source</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#running-the-tests">Running the tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#building-the-documentation">Building the Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick and easy analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick.html#the-neurom-ezy-module">The <code class="docutils literal"><span class="pre">neurom.ezy</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick.html#data-checking-applications">Data checking applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">A Tour of NeuroM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#design-philosophy">Design philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-layout">Data Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trees">Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iterators">Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cook-book">Cook-book</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-the-total-length-of-a-tree">Get the total length of a tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-the-path-length-to-an-end-point">Get the path length to an end-point</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">NeuroM morphology definitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#point">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#soma">Soma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#neurite-tree">Neurite tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#neuron">Neuron</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.ezy.html">neurom.ezy</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.ezy.neuron.html">neurom.ezy.neuron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.html">neurom.ezy.neuron.Neuron</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.__init__.html">neurom.ezy.neuron.Neuron.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_local_bifurcation_angles.html">neurom.ezy.neuron.Neuron.get_local_bifurcation_angles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_n_neurites.html">neurom.ezy.neuron.Neuron.get_n_neurites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_n_sections.html">neurom.ezy.neuron.Neuron.get_n_sections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_n_sections_per_neurite.html">neurom.ezy.neuron.Neuron.get_n_sections_per_neurite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles.html">neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_section_lengths.html">neurom.ezy.neuron.Neuron.get_section_lengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_section_path_distances.html">neurom.ezy.neuron.Neuron.get_section_path_distances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_section_radial_distances.html">neurom.ezy.neuron.Neuron.get_section_radial_distances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_segment_lengths.html">neurom.ezy.neuron.Neuron.get_segment_lengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_soma_radius.html">neurom.ezy.neuron.Neuron.get_soma_radius</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.view.html">neurom.ezy.neuron.Neuron.view</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.view3d.html">neurom.ezy.neuron.Neuron.view3d</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.html">neurom.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.utils.html">neurom.io.utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.get_initial_segment_ids.html">neurom.io.utils.get_initial_segment_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.get_soma_ids.html">neurom.io.utils.get_soma_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.load_neuron.html">neurom.io.utils.load_neuron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.make_neuron.html">neurom.io.utils.make_neuron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.make_tree.html">neurom.io.utils.make_tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.readers.html">neurom.io.readers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_data.html">neurom.io.readers.load_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_h5v1.html">neurom.io.readers.load_h5v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_h5v2.html">neurom.io.readers.load_h5v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_swc.html">neurom.io.readers.load_swc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.html">neurom.io.readers.RawDataWrapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.__init__.html">neurom.io.readers.RawDataWrapper.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_children.html">neurom.io.readers.RawDataWrapper.get_children</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_col.html">neurom.io.readers.RawDataWrapper.get_col</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_end_points.html">neurom.io.readers.RawDataWrapper.get_end_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_fork_points.html">neurom.io.readers.RawDataWrapper.get_fork_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_ids.html">neurom.io.readers.RawDataWrapper.get_ids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_parent.html">neurom.io.readers.RawDataWrapper.get_parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_point.html">neurom.io.readers.RawDataWrapper.get_point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_row.html">neurom.io.readers.RawDataWrapper.get_row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.iter_row.html">neurom.io.readers.RawDataWrapper.iter_row</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.check.html">neurom.io.check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_all_finite_length_segments.html">neurom.io.check.has_all_finite_length_segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_all_finite_radius_neurites.html">neurom.io.check.has_all_finite_radius_neurites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_sequential_ids.html">neurom.io.check.has_sequential_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_soma_points.html">neurom.io.check.has_soma_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.is_neurite_segment.html">neurom.io.check.is_neurite_segment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.html">neurom.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.types.html">neurom.core.types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.types.TreeType.html">neurom.core.types.TreeType</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.all.html">neurom.core.types.TreeType.all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.apical_dendrite.html">neurom.core.types.TreeType.apical_dendrite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.axon.html">neurom.core.types.TreeType.axon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.basal_dendrite.html">neurom.core.types.TreeType.basal_dendrite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.soma.html">neurom.core.types.TreeType.soma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.undefined.html">neurom.core.types.TreeType.undefined</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.tree.html">neurom.core.tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.i_branch_end_points.html">neurom.core.tree.i_branch_end_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ibifurcation_point.html">neurom.core.tree.ibifurcation_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.iforking_point.html">neurom.core.tree.iforking_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ileaf.html">neurom.core.tree.ileaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.imap_val.html">neurom.core.tree.imap_val</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ipostorder.html">neurom.core.tree.ipostorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ipreorder.html">neurom.core.tree.ipreorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_bifurcation_point.html">neurom.core.tree.is_bifurcation_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_forking_point.html">neurom.core.tree.is_forking_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_leaf.html">neurom.core.tree.is_leaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_root.html">neurom.core.tree.is_root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.isection.html">neurom.core.tree.isection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.isegment.html">neurom.core.tree.isegment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.itriplet.html">neurom.core.tree.itriplet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.iupstream.html">neurom.core.tree.iupstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.val_iter.html">neurom.core.tree.val_iter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.Tree.html">neurom.core.tree.Tree</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.tree.Tree.__init__.html">neurom.core.tree.Tree.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.tree.Tree.add_child.html">neurom.core.tree.Tree.add_child</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.neuron.html">neurom.core.neuron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.make_soma.html">neurom.core.neuron.make_soma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.BaseSoma.html">neurom.core.neuron.BaseSoma</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.BaseSoma.__init__.html">neurom.core.neuron.BaseSoma.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.BaseSoma.iter.html">neurom.core.neuron.BaseSoma.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.Neuron.html">neurom.core.neuron.Neuron</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.Neuron.__init__.html">neurom.core.neuron.Neuron.__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.html">neurom.core.neuron.SOMA_TYPE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.get_type.html">neurom.core.neuron.SOMA_TYPE.get_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.A.html">neurom.core.neuron.SOMA_TYPE.A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.B.html">neurom.core.neuron.SOMA_TYPE.B</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.C.html">neurom.core.neuron.SOMA_TYPE.C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.INVALID.html">neurom.core.neuron.SOMA_TYPE.INVALID</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SomaA.html">neurom.core.neuron.SomaA</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaA.__init__.html">neurom.core.neuron.SomaA.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaA.iter.html">neurom.core.neuron.SomaA.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SomaB.html">neurom.core.neuron.SomaB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaB.__init__.html">neurom.core.neuron.SomaB.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaB.iter.html">neurom.core.neuron.SomaB.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SomaC.html">neurom.core.neuron.SomaC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaC.__init__.html">neurom.core.neuron.SomaC.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaC.iter.html">neurom.core.neuron.SomaC.iter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.point.html">neurom.core.point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.point.as_point.html">neurom.core.point.as_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.point.Point.html">neurom.core.point.Point</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.count.html">neurom.core.point.Point.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.index.html">neurom.core.point.Point.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.r.html">neurom.core.point.Point.r</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.t.html">neurom.core.point.Point.t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.x.html">neurom.core.point.Point.x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.y.html">neurom.core.point.Point.y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.z.html">neurom.core.point.Point.z</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.dataformat.html">neurom.core.dataformat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.html">neurom.core.dataformat.COLS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.ID.html">neurom.core.dataformat.COLS.ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.P.html">neurom.core.dataformat.COLS.P</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.R.html">neurom.core.dataformat.COLS.R</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.TYPE.html">neurom.core.dataformat.COLS.TYPE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.X.html">neurom.core.dataformat.COLS.X</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.Y.html">neurom.core.dataformat.COLS.Y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.Z.html">neurom.core.dataformat.COLS.Z</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.html">neurom.core.dataformat.POINT_TYPE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE.html">neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.AXON.html">neurom.core.dataformat.POINT_TYPE.AXON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE.html">neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.CUSTOM.html">neurom.core.dataformat.POINT_TYPE.CUSTOM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.END_POINT.html">neurom.core.dataformat.POINT_TYPE.END_POINT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.FORK_POINT.html">neurom.core.dataformat.POINT_TYPE.FORK_POINT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.NEURITES.html">neurom.core.dataformat.POINT_TYPE.NEURITES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.SOMA.html">neurom.core.dataformat.POINT_TYPE.SOMA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.UNDEFINED.html">neurom.core.dataformat.POINT_TYPE.UNDEFINED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.exceptions.html">neurom.exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.exceptions.NeuroMError.html">neurom.exceptions.NeuroMError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.exceptions.NonConsecutiveIDsError.html">neurom.exceptions.NonConsecutiveIDsError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.exceptions.SomaError.html">neurom.exceptions.SomaError</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.view.html">neurom.view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.view.common.html">neurom.view.common</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.figure_naming.html">neurom.view.common.figure_naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.get_color.html">neurom.view.common.get_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.get_figure.html">neurom.view.common.get_figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_labels.html">neurom.view.common.plot_labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_legend.html">neurom.view.common.plot_legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_limits.html">neurom.view.common.plot_limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_sphere.html">neurom.view.common.plot_sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_style.html">neurom.view.common.plot_style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_ticks.html">neurom.view.common.plot_ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_title.html">neurom.view.common.plot_title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.save_plot.html">neurom.view.common.save_plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.analysis.html">neurom.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.analysis.morphmath.html">neurom.analysis.morphmath</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.angle_3points.html">neurom.analysis.morphmath.angle_3points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.average_points_dist.html">neurom.analysis.morphmath.average_points_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.path_distance.html">neurom.analysis.morphmath.path_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.point_dist.html">neurom.analysis.morphmath.point_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.point_dist2.html">neurom.analysis.morphmath.point_dist2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.polygon_diameter.html">neurom.analysis.morphmath.polygon_diameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.segment_area.html">neurom.analysis.morphmath.segment_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.segment_volume.html">neurom.analysis.morphmath.segment_volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.taper_rate.html">neurom.analysis.morphmath.taper_rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.vector.html">neurom.analysis.morphmath.vector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.analysis.morphtree.html">neurom.analysis.morphtree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.find_tree_type.html">neurom.analysis.morphtree.find_tree_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.get_bounding_box.html">neurom.analysis.morphtree.get_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.get_tree_type.html">neurom.analysis.morphtree.get_tree_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_local_bifurcation_angle.html">neurom.analysis.morphtree.i_local_bifurcation_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_remote_bifurcation_angle.html">neurom.analysis.morphtree.i_remote_bifurcation_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_section_length.html">neurom.analysis.morphtree.i_section_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_section_path_length.html">neurom.analysis.morphtree.i_section_path_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_section_radial_dist.html">neurom.analysis.morphtree.i_section_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_length.html">neurom.analysis.morphtree.i_segment_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_meander_angle.html">neurom.analysis.morphtree.i_segment_meander_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_radial_dist.html">neurom.analysis.morphtree.i_segment_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_radius.html">neurom.analysis.morphtree.i_segment_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.n_sections.html">neurom.analysis.morphtree.n_sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.path_length.html">neurom.analysis.morphtree.path_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.segment_length.html">neurom.analysis.morphtree.segment_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.segment_radial_dist.html">neurom.analysis.morphtree.segment_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.segment_radius.html">neurom.analysis.morphtree.segment_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.set_tree_type.html">neurom.analysis.morphtree.set_tree_type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">NeuroM</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>A Tour of NeuroM</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tour.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="a-tour-of-neurom">
+<h1>A Tour of NeuroM<a class="headerlink" href="#a-tour-of-neurom" title="Permalink to this headline">¶</a></h1>
+<p>This is a more in-depth guide to <code class="docutils literal"><span class="pre">NeuroM</span></code>. It will consist of explanations of the
+overall design philosophy and the main components. The target audience consists of
+users who want to perform analyses beyond what is described in the quick and easy
+section.</p>
+<div class="section" id="design-philosophy">
+<h2>Design philosophy<a class="headerlink" href="#design-philosophy" title="Permalink to this headline">¶</a></h2>
+<p>NeuroM is designed to be lighweight, simple, testable and extensible. It consists
+mainly of reusable components with limited functionality that can be combined to
+construct more complex algorithms. It makes few assumptions about input data, and
+prefers to fail early and loudly over implicitly fixing any data errors.</p>
+<p>As a part of its design, it does a limited amount of processing on input data: it
+attempts to re-arrange the data into a convenient internal format without adding
+or removing any information. It can be roughly considered to consist of</p>
+<ol class="arabic simple">
+<li>A <a class="reference internal" href="#tour-data-layout"><span>data block</span></a> containing re-arranged input data.</li>
+<li><a class="reference internal" href="#tour-tree-label"><span>Tree structures</span></a> indexing sub-trees in the data block.</li>
+<li><a class="reference internal" href="#iterator-label"><span>Iterators</span></a> providing different types of iteration over those
+trees.</li>
+<li>Functions to extract information from each iteration point.</li>
+</ol>
+<p>It includes higher level classes representing the soma and a whole neuron. A neuron
+is simply a collection of trees representing the neurites, and a soma.</p>
+</div>
+<div class="section" id="data-layout">
+<span id="tour-data-layout"></span><h2>Data Layout<a class="headerlink" href="#data-layout" title="Permalink to this headline">¶</a></h2>
+<p>The internal data layout is simply an array of <a class="reference internal" href="definitions.html#point-label"><span>points</span></a>. It is
+stored in memory as a 2-dimensional <code class="docutils literal"><span class="pre">numpy</span></code> array, with each row representing a
+data point. This data block is constructed when reading in a morphology file in
+any of the accepted formats. No information is added or removed from the input
+data.</p>
+</div>
+<div class="section" id="trees">
+<span id="tour-tree-label"></span><h2>Trees<a class="headerlink" href="#trees" title="Permalink to this headline">¶</a></h2>
+<p>Trees are hierachical, recursive structures used to represent individual
+neurites in a morphology. NeuroM represents neurites as <a class="reference internal" href="definitions.html#tree-label"><span>trees containing
+measurement point information at each node</span></a>. The role of a tree is
+simply to maintain the hierarchy of its components. As will be shown, most of
+the interesting work is done through a combination of different types of tree
+<a class="reference internal" href="#iterator-label"><span>iteration</span></a>,
+and different mapping and conversion functions.</p>
+</div>
+<div class="section" id="iterators">
+<span id="iterator-label"></span><h2>Iterators<a class="headerlink" href="#iterators" title="Permalink to this headline">¶</a></h2>
+<p>NeuroM provides different means of iterating over a single tree. These provide
+means to visit different nodes of the tree - e.g. all nodes, all nodes between a
+given node and the root node, forking points, end points - but also different
+groupings of nodes - e.g. sections (sequences of nodes between bifurcation
+points), triplets (sequences of three consecutive nodes), segments (pairs of
+consecutive nodes).</p>
+<p>The idea behind this general approach is that most interesting features of a
+tree can be obtained by mapping or reducing a suitable iteration sequence with a
+suitable mapping or reducing function. The general form of a mapping is</p>
+<div class="code python highlight-python"><div class="highlight"><pre>tree = ....
+xs = [get_x(i) for i in some_iterator(tree)]
+</pre></div>
+</div>
+<p>An example of a reduce operation is</p>
+<div class="code python highlight-python"><div class="highlight"><pre>tree = ....
+y = sum(get_y(i) for i in some_iterator(tree))
+</pre></div>
+</div>
+<p>NeuroM provides various functions that can be applied to nodes, segments,
+triplets sections (these take the place of get_x and get_y in the examples
+above.) With knowledge of iterators and functions, it is possible to implement
+great things in single lines of code. However, some helper functions have been
+provided for the most common tree operations. We will get back to that later.
+First, let&#8217;s start by listing the different iterator types, before implementing
+some real examples in the <a class="reference internal" href="#cookbook-label"><span>cook-book section</span></a>.</p>
+<p>Currently, these are the tree iterators provided in the
+<a class="reference internal" href="neurom/neurom.core.tree.html#module-neurom.core.tree" title="neurom.core.tree"><code class="xref py py-mod docutils literal"><span class="pre">neurom.core.tree</span></code></a> module.  They are functions that have a tree object
+as parameter and return a suitable iterator:</p>
+<ul class="simple">
+<li>ipreorder: depth first pre-order traversal of nodes</li>
+<li>ipostorder: depth-first post-order traversal of nodes</li>
+<li>iupstream: iterate to root node of tree</li>
+<li>ileaf: leaf or end-nodes</li>
+<li>iforking_point: nodes with more than one child</li>
+<li>ibifurcation_point: nodes with two children</li>
+<li>isegment: pairs of consecutive nodes</li>
+<li>itriplet: triplets of consecutive nodes</li>
+<li>isection: sequences of points between forking points. These include the forking point. Points joining sections are repeated.</li>
+</ul>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Generate above list from docstrings</p>
+</div>
+<p>All of these iterators resolve to tree objects, but most analyses are interested in
+the data stored in each node of the tree. This is kept in a value field of the tree.
+To ease access to the data, and iterator adaptor is provided:</p>
+<ul class="simple">
+<li>val_iter</li>
+</ul>
+<p>This transforms a tree iterator so that it converts trees to values. It works for nested
+structures, such as segments, triplets and sections. So for example, printing the radius
+of all leaves of a tree would be done like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">neurom.core.tree</span> <span class="kn">import</span> <span class="n">ileaf</span><span class="p">,</span> <span class="n">val_iter</span>
+<span class="n">t</span> <span class="o">=</span> <span class="o">...</span> <span class="c"># a neurom.core.tree.Tree object</span>
+<span class="k">for</span> <span class="n">leaf</span> <span class="ow">in</span> <span class="n">val_iter</span><span class="p">(</span><span class="n">ileaf</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="k">print</span> <span class="n">leaf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c"># radius is 4th component of data</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cook-book">
+<span id="cookbook-label"></span><h2>Cook-book<a class="headerlink" href="#cook-book" title="Permalink to this headline">¶</a></h2>
+<p>Now, for some real life examples. These examples rely on trees. An easy way to get some
+is to load a morphology file into a neuron object.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">neurom.io.utils</span> <span class="kn">import</span> <span class="n">load_neuron</span>
+<span class="n">nrn</span> <span class="o">=</span> <span class="n">load_neuron</span><span class="p">(</span><span class="s">&#39;test_data/swc/Neuron.swc&#39;</span><span class="p">)</span>
+<span class="n">trees</span> <span class="o">=</span> <span class="n">nrn</span><span class="o">.</span><span class="n">neurite_trees</span>
+</pre></div>
+</div>
+<p>We will assume <code class="docutils literal"><span class="pre">trees</span></code> has been obtained in a similar way in the following examples.</p>
+<div class="section" id="get-the-total-length-of-a-tree">
+<h3>Get the total length of a tree<a class="headerlink" href="#get-the-total-length-of-a-tree" title="Permalink to this headline">¶</a></h3>
+<p>This can be achieved by summing the lengths of all the segments in the tree. For
+this, we iterate over all segments, calculate each segment length, and sum all
+lengths together:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">neurom.core.tree</span> <span class="kn">import</span> <span class="n">isegment</span><span class="p">,</span> <span class="n">val_iter</span>
+<span class="kn">from</span> <span class="nn">neurom.analysis.morphtree</span> <span class="kn">import</span> <span class="n">segment_length</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">tree_length</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">segment_length</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">val_iter</span><span class="p">(</span><span class="n">isegment</span><span class="p">(</span><span class="n">tree</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-the-path-length-to-an-end-point">
+<h3>Get the path length to an end-point<a class="headerlink" href="#get-the-path-length-to-an-end-point" title="Permalink to this headline">¶</a></h3>
+<p>This is the distance between a leaf node and the root, and can be calculated by
+iterating upstream from the leaf to the root, summing the distance as we go
+along:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">neurom.core.tree</span> <span class="kn">import</span> <span class="n">isegment</span><span class="p">,</span> <span class="n">ileaf</span><span class="p">,</span> <span class="n">iupstream</span><span class="p">,</span> <span class="n">val_iter</span>
+<span class="kn">from</span> <span class="nn">neurom.analysis.morphtree</span> <span class="kn">import</span> <span class="n">segment_length</span>
+<span class="c"># for demonstration purposes, get the first leaf we find:</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">first_leaf</span> <span class="o">=</span> <span class="n">ileaf</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="c"># now iterate segment-wise, upstream, and sum the lengths</span>
+<span class="n">path_len</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">segment_length</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">val_iter</span><span class="p">(</span><span class="n">isegment</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">iupstream</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>This example is conceptually the same as the previous one, except for one
+crucial point: we start the iteration <em>from</em> a leaf node, and iterate <em>towards</em> the
+root. This is the reason for the extra complexity:</p>
+<ul class="simple">
+<li>We use leaf iterator ileaf to get the first leaf node. This is somewhat
+beyond the scope of this example, but it is an interesting example of use of a
+different kind of iterator</li>
+<li>We iterate in segments using isegment, but we tell it
+to iterate upstream. That is what the second parameter to isegment does: it
+transforms the order of iteration.</li>
+</ul>
+<p>If this all seems too complicated, remember that it is a general approach that
+will allow you to do many more things other than getting the path length to the
+root. But if that is all you care about, NeuroM has a packaged function for it:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">neurom.analysis.morphtree</span> <span class="kn">import</span> <span class="n">path_length</span>
+<span class="o">...</span>
+<span class="c"># assume leaf is a leaf node obtained by means that are irrelevant to this example</span>
+<span class="n">path_len</span> <span class="o">=</span> <span class="n">path_length</span><span class="p">(</span><span class="n">leaf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="definitions.html" class="btn btn-neutral float-right" title="NeuroM morphology definitions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quick.html" class="btn btn-neutral" title="Quick and easy analysis" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Ecole Polytechnique Federale de Lausanne, Blue Brain Project.
+      Last updated on Aug 21, 2015.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.4.dev1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

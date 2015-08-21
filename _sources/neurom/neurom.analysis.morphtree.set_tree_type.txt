@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.set_tree_type
+=======================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: set_tree_type

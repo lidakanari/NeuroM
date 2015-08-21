@@ -1,0 +1,6 @@
+neurom.view.common.plot_legend
+==============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: plot_legend

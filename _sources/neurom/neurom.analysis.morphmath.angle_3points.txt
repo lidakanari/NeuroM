@@ -1,0 +1,6 @@
+neurom.analysis.morphmath.angle_3points
+=======================================
+
+.. currentmodule:: neurom.analysis.morphmath
+
+.. autofunction:: angle_3points

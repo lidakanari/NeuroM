@@ -1,0 +1,6 @@
+neurom.analysis.morphmath.taper_rate
+====================================
+
+.. currentmodule:: neurom.analysis.morphmath
+
+.. autofunction:: taper_rate

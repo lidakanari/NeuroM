@@ -1,0 +1,6 @@
+neurom.analysis.morphmath.vector
+================================
+
+.. currentmodule:: neurom.analysis.morphmath
+
+.. autofunction:: vector

@@ -1,0 +1,6 @@
+neurom.ezy.neuron.Neuron.get_soma_radius
+========================================
+
+.. currentmodule:: neurom.ezy.neuron
+
+.. automethod:: Neuron.get_soma_radius

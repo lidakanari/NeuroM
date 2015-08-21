@@ -1,0 +1,6 @@
+neurom.exceptions.SomaError
+===========================
+
+.. currentmodule:: neurom.exceptions
+
+.. autoexception:: SomaError

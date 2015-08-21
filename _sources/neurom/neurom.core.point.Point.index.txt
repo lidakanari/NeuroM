@@ -1,0 +1,6 @@
+neurom.core.point.Point.index
+=============================
+
+.. currentmodule:: neurom.core.point
+
+.. automethod:: Point.index

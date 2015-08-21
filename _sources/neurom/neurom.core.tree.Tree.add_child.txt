@@ -1,0 +1,6 @@
+neurom.core.tree.Tree.add_child
+===============================
+
+.. currentmodule:: neurom.core.tree
+
+.. automethod:: Tree.add_child

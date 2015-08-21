@@ -1,0 +1,6 @@
+neurom.io.utils.load_neuron
+===========================
+
+.. currentmodule:: neurom.io.utils
+
+.. autofunction:: load_neuron

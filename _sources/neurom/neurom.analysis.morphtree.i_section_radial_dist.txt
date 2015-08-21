@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.i_section_radial_dist
+===============================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: i_section_radial_dist

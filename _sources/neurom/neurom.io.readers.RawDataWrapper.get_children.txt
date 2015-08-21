@@ -1,0 +1,6 @@
+neurom.io.readers.RawDataWrapper.get_children
+=============================================
+
+.. currentmodule:: neurom.io.readers
+
+.. automethod:: RawDataWrapper.get_children

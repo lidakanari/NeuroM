@@ -1,0 +1,6 @@
+neurom.ezy.Neuron.__init__
+==========================
+
+.. currentmodule:: neurom.ezy
+
+.. automethod:: Neuron.__init__

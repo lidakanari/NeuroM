@@ -1,0 +1,6 @@
+neurom.core.tree.ileaf
+======================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: ileaf

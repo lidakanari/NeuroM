@@ -1,0 +1,6 @@
+neurom.io.check.has_soma_points
+===============================
+
+.. currentmodule:: neurom.io.check
+
+.. autofunction:: has_soma_points

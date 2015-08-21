@@ -1,0 +1,6 @@
+neurom.view.common.get_color
+============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: get_color

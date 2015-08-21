@@ -1,0 +1,6 @@
+neurom.io.utils.make_tree
+=========================
+
+.. currentmodule:: neurom.io.utils
+
+.. autofunction:: make_tree

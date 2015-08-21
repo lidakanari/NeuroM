@@ -1,0 +1,6 @@
+neurom.core.types.TreeType.apical_dendrite
+==========================================
+
+.. currentmodule:: neurom.core.types
+
+.. autoattribute:: TreeType.apical_dendrite

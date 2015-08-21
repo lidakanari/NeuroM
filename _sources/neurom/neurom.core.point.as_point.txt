@@ -1,0 +1,6 @@
+neurom.core.point.as_point
+==========================
+
+.. currentmodule:: neurom.core.point
+
+.. autofunction:: as_point

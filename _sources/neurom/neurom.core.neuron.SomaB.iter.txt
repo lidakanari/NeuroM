@@ -1,0 +1,6 @@
+neurom.core.neuron.SomaB.iter
+=============================
+
+.. currentmodule:: neurom.core.neuron
+
+.. automethod:: SomaB.iter

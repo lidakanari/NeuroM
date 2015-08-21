@@ -1,0 +1,6 @@
+neurom.core.dataformat.COLS.Z
+=============================
+
+.. currentmodule:: neurom.core.dataformat
+
+.. autoattribute:: COLS.Z

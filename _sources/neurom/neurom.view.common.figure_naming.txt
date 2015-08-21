@@ -1,0 +1,6 @@
+neurom.view.common.figure_naming
+================================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: figure_naming

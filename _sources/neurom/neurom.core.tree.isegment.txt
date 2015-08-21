@@ -1,0 +1,6 @@
+neurom.core.tree.isegment
+=========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: isegment

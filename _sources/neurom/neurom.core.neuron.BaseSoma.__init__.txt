@@ -1,0 +1,6 @@
+neurom.core.neuron.BaseSoma.__init__
+====================================
+
+.. currentmodule:: neurom.core.neuron
+
+.. automethod:: BaseSoma.__init__

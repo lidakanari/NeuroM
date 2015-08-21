@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.find_tree_type
+========================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: find_tree_type

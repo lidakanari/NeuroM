@@ -1,0 +1,6 @@
+neurom.analysis.morphmath.polygon_diameter
+==========================================
+
+.. currentmodule:: neurom.analysis.morphmath
+
+.. autofunction:: polygon_diameter

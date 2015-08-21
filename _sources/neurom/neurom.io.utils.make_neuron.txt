@@ -1,0 +1,6 @@
+neurom.io.utils.make_neuron
+===========================
+
+.. currentmodule:: neurom.io.utils
+
+.. autofunction:: make_neuron

@@ -1,0 +1,6 @@
+neurom.analysis.morphmath.path_distance
+=======================================
+
+.. currentmodule:: neurom.analysis.morphmath
+
+.. autofunction:: path_distance

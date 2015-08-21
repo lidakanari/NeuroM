@@ -1,0 +1,6 @@
+neurom.core.dataformat.POINT_TYPE.NEURITES
+==========================================
+
+.. currentmodule:: neurom.core.dataformat
+
+.. autoattribute:: POINT_TYPE.NEURITES

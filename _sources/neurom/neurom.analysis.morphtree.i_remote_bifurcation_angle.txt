@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.i_remote_bifurcation_angle
+====================================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: i_remote_bifurcation_angle

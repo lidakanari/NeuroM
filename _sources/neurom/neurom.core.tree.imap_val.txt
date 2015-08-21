@@ -1,0 +1,6 @@
+neurom.core.tree.imap_val
+=========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: imap_val

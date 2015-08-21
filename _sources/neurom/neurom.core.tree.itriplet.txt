@@ -1,0 +1,6 @@
+neurom.core.tree.itriplet
+=========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: itriplet

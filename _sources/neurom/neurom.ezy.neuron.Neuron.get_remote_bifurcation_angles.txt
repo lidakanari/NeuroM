@@ -1,0 +1,6 @@
+neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles
+======================================================
+
+.. currentmodule:: neurom.ezy.neuron
+
+.. automethod:: Neuron.get_remote_bifurcation_angles

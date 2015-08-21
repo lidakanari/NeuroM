@@ -1,0 +1,6 @@
+neurom.core.types.TreeType.undefined
+====================================
+
+.. currentmodule:: neurom.core.types
+
+.. autoattribute:: TreeType.undefined

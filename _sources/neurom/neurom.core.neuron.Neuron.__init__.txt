@@ -1,0 +1,6 @@
+neurom.core.neuron.Neuron.__init__
+==================================
+
+.. currentmodule:: neurom.core.neuron
+
+.. automethod:: Neuron.__init__

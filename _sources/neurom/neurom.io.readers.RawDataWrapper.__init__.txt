@@ -1,0 +1,6 @@
+neurom.io.readers.RawDataWrapper.__init__
+=========================================
+
+.. currentmodule:: neurom.io.readers
+
+.. automethod:: RawDataWrapper.__init__

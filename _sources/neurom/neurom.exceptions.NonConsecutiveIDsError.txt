@@ -1,0 +1,6 @@
+neurom.exceptions.NonConsecutiveIDsError
+========================================
+
+.. currentmodule:: neurom.exceptions
+
+.. autoexception:: NonConsecutiveIDsError

@@ -1,0 +1,6 @@
+neurom.core.tree.iupstream
+==========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: iupstream

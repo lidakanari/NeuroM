@@ -1,0 +1,6 @@
+neurom.core.tree.isection
+=========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: isection

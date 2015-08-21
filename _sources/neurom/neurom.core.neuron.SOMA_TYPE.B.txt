@@ -1,0 +1,6 @@
+neurom.core.neuron.SOMA_TYPE.B
+==============================
+
+.. currentmodule:: neurom.core.neuron
+
+.. autoattribute:: SOMA_TYPE.B

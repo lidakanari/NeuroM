@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.get_bounding_box
+==========================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: get_bounding_box

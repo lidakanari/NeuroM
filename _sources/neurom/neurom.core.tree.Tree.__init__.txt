@@ -1,0 +1,6 @@
+neurom.core.tree.Tree.__init__
+==============================
+
+.. currentmodule:: neurom.core.tree
+
+.. automethod:: Tree.__init__

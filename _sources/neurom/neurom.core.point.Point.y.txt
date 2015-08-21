@@ -1,0 +1,6 @@
+neurom.core.point.Point.y
+=========================
+
+.. currentmodule:: neurom.core.point
+
+.. autoattribute:: Point.y

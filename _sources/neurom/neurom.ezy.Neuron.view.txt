@@ -1,0 +1,6 @@
+neurom.ezy.Neuron.view
+======================
+
+.. currentmodule:: neurom.ezy
+
+.. automethod:: Neuron.view

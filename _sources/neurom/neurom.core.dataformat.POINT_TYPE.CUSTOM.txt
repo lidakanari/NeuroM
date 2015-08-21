@@ -1,0 +1,6 @@
+neurom.core.dataformat.POINT_TYPE.CUSTOM
+========================================
+
+.. currentmodule:: neurom.core.dataformat
+
+.. autoattribute:: POINT_TYPE.CUSTOM

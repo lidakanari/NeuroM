@@ -1,0 +1,1268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>neurom.view.common &mdash; NeuroM 0.0.4.dev1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="NeuroM 0.0.4.dev1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> NeuroM
+        
+
+        
+          
+          <img src="../../../_static/bbp.jpg" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../readme.html">NeuroM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#virtualenv-setup">Virtualenv setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#neurom-installation">NeuroM installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#install-from-the-bbp-pypi-server">Install from the BBP PyPI server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#install-from-git">Install from git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../readme.html#install-from-source">Install from source</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#running-the-tests">Running the tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../readme.html#building-the-documentation">Building the Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../readme.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick.html">Quick and easy analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../quick.html#the-neurom-ezy-module">The <code class="docutils literal"><span class="pre">neurom.ezy</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quick.html#data-checking-applications">Data checking applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tour.html">A Tour of NeuroM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tour.html#design-philosophy">Design philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tour.html#data-layout">Data Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tour.html#trees">Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tour.html#iterators">Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tour.html#cook-book">Cook-book</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tour.html#get-the-total-length-of-a-tree">Get the total length of a tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tour.html#get-the-path-length-to-an-end-point">Get the path length to an end-point</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../definitions.html">NeuroM morphology definitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../definitions.html#point">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../definitions.html#soma">Soma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../definitions.html#neurite-tree">Neurite tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../definitions.html#neuron">Neuron</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.ezy.html">neurom.ezy</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.html">neurom.ezy.neuron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.html">neurom.ezy.neuron.Neuron</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.__init__.html">neurom.ezy.neuron.Neuron.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_local_bifurcation_angles.html">neurom.ezy.neuron.Neuron.get_local_bifurcation_angles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_n_neurites.html">neurom.ezy.neuron.Neuron.get_n_neurites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_n_sections.html">neurom.ezy.neuron.Neuron.get_n_sections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_n_sections_per_neurite.html">neurom.ezy.neuron.Neuron.get_n_sections_per_neurite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles.html">neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_section_lengths.html">neurom.ezy.neuron.Neuron.get_section_lengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_section_path_distances.html">neurom.ezy.neuron.Neuron.get_section_path_distances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_section_radial_distances.html">neurom.ezy.neuron.Neuron.get_section_radial_distances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_segment_lengths.html">neurom.ezy.neuron.Neuron.get_segment_lengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.get_soma_radius.html">neurom.ezy.neuron.Neuron.get_soma_radius</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.view.html">neurom.ezy.neuron.Neuron.view</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.ezy.neuron.Neuron.view3d.html">neurom.ezy.neuron.Neuron.view3d</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.io.html">neurom.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.io.utils.html">neurom.io.utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.utils.get_initial_segment_ids.html">neurom.io.utils.get_initial_segment_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.utils.get_soma_ids.html">neurom.io.utils.get_soma_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.utils.load_neuron.html">neurom.io.utils.load_neuron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.utils.make_neuron.html">neurom.io.utils.make_neuron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.utils.make_tree.html">neurom.io.utils.make_tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.io.readers.html">neurom.io.readers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.readers.load_data.html">neurom.io.readers.load_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.readers.load_h5v1.html">neurom.io.readers.load_h5v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.readers.load_h5v2.html">neurom.io.readers.load_h5v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.readers.load_swc.html">neurom.io.readers.load_swc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.html">neurom.io.readers.RawDataWrapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.__init__.html">neurom.io.readers.RawDataWrapper.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_children.html">neurom.io.readers.RawDataWrapper.get_children</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_col.html">neurom.io.readers.RawDataWrapper.get_col</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_end_points.html">neurom.io.readers.RawDataWrapper.get_end_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_fork_points.html">neurom.io.readers.RawDataWrapper.get_fork_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_ids.html">neurom.io.readers.RawDataWrapper.get_ids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_parent.html">neurom.io.readers.RawDataWrapper.get_parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_point.html">neurom.io.readers.RawDataWrapper.get_point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.get_row.html">neurom.io.readers.RawDataWrapper.get_row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.io.readers.RawDataWrapper.iter_row.html">neurom.io.readers.RawDataWrapper.iter_row</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.io.check.html">neurom.io.check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.check.has_all_finite_length_segments.html">neurom.io.check.has_all_finite_length_segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.check.has_all_finite_radius_neurites.html">neurom.io.check.has_all_finite_radius_neurites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.check.has_sequential_ids.html">neurom.io.check.has_sequential_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.check.has_soma_points.html">neurom.io.check.has_soma_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.io.check.is_neurite_segment.html">neurom.io.check.is_neurite_segment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.core.html">neurom.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.core.types.html">neurom.core.types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.types.TreeType.html">neurom.core.types.TreeType</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.types.TreeType.all.html">neurom.core.types.TreeType.all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.types.TreeType.apical_dendrite.html">neurom.core.types.TreeType.apical_dendrite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.types.TreeType.axon.html">neurom.core.types.TreeType.axon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.types.TreeType.basal_dendrite.html">neurom.core.types.TreeType.basal_dendrite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.types.TreeType.soma.html">neurom.core.types.TreeType.soma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.types.TreeType.undefined.html">neurom.core.types.TreeType.undefined</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.core.tree.html">neurom.core.tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.i_branch_end_points.html">neurom.core.tree.i_branch_end_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.ibifurcation_point.html">neurom.core.tree.ibifurcation_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.iforking_point.html">neurom.core.tree.iforking_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.ileaf.html">neurom.core.tree.ileaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.imap_val.html">neurom.core.tree.imap_val</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.ipostorder.html">neurom.core.tree.ipostorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.ipreorder.html">neurom.core.tree.ipreorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.is_bifurcation_point.html">neurom.core.tree.is_bifurcation_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.is_forking_point.html">neurom.core.tree.is_forking_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.is_leaf.html">neurom.core.tree.is_leaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.is_root.html">neurom.core.tree.is_root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.isection.html">neurom.core.tree.isection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.isegment.html">neurom.core.tree.isegment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.itriplet.html">neurom.core.tree.itriplet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.iupstream.html">neurom.core.tree.iupstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.val_iter.html">neurom.core.tree.val_iter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.tree.Tree.html">neurom.core.tree.Tree</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.tree.Tree.__init__.html">neurom.core.tree.Tree.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.tree.Tree.add_child.html">neurom.core.tree.Tree.add_child</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.core.neuron.html">neurom.core.neuron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.neuron.make_soma.html">neurom.core.neuron.make_soma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.neuron.BaseSoma.html">neurom.core.neuron.BaseSoma</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.BaseSoma.__init__.html">neurom.core.neuron.BaseSoma.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.BaseSoma.iter.html">neurom.core.neuron.BaseSoma.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.neuron.Neuron.html">neurom.core.neuron.Neuron</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.Neuron.__init__.html">neurom.core.neuron.Neuron.__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SOMA_TYPE.html">neurom.core.neuron.SOMA_TYPE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SOMA_TYPE.get_type.html">neurom.core.neuron.SOMA_TYPE.get_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SOMA_TYPE.A.html">neurom.core.neuron.SOMA_TYPE.A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SOMA_TYPE.B.html">neurom.core.neuron.SOMA_TYPE.B</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SOMA_TYPE.C.html">neurom.core.neuron.SOMA_TYPE.C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SOMA_TYPE.INVALID.html">neurom.core.neuron.SOMA_TYPE.INVALID</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaA.html">neurom.core.neuron.SomaA</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaA.__init__.html">neurom.core.neuron.SomaA.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaA.iter.html">neurom.core.neuron.SomaA.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaB.html">neurom.core.neuron.SomaB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaB.__init__.html">neurom.core.neuron.SomaB.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaB.iter.html">neurom.core.neuron.SomaB.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaC.html">neurom.core.neuron.SomaC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaC.__init__.html">neurom.core.neuron.SomaC.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.neuron.SomaC.iter.html">neurom.core.neuron.SomaC.iter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.core.point.html">neurom.core.point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.point.as_point.html">neurom.core.point.as_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.html">neurom.core.point.Point</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.count.html">neurom.core.point.Point.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.index.html">neurom.core.point.Point.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.r.html">neurom.core.point.Point.r</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.t.html">neurom.core.point.Point.t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.x.html">neurom.core.point.Point.x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.y.html">neurom.core.point.Point.y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.point.Point.z.html">neurom.core.point.Point.z</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.html">neurom.core.dataformat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.html">neurom.core.dataformat.COLS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.ID.html">neurom.core.dataformat.COLS.ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.P.html">neurom.core.dataformat.COLS.P</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.R.html">neurom.core.dataformat.COLS.R</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.TYPE.html">neurom.core.dataformat.COLS.TYPE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.X.html">neurom.core.dataformat.COLS.X</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.Y.html">neurom.core.dataformat.COLS.Y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.COLS.Z.html">neurom.core.dataformat.COLS.Z</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.html">neurom.core.dataformat.POINT_TYPE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE.html">neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.AXON.html">neurom.core.dataformat.POINT_TYPE.AXON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE.html">neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.CUSTOM.html">neurom.core.dataformat.POINT_TYPE.CUSTOM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.END_POINT.html">neurom.core.dataformat.POINT_TYPE.END_POINT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.FORK_POINT.html">neurom.core.dataformat.POINT_TYPE.FORK_POINT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.NEURITES.html">neurom.core.dataformat.POINT_TYPE.NEURITES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.SOMA.html">neurom.core.dataformat.POINT_TYPE.SOMA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../neurom/neurom.core.dataformat.POINT_TYPE.UNDEFINED.html">neurom.core.dataformat.POINT_TYPE.UNDEFINED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.exceptions.html">neurom.exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.exceptions.NeuroMError.html">neurom.exceptions.NeuroMError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.exceptions.NonConsecutiveIDsError.html">neurom.exceptions.NonConsecutiveIDsError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.exceptions.SomaError.html">neurom.exceptions.SomaError</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.view.html">neurom.view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.view.common.html">neurom.view.common</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.figure_naming.html">neurom.view.common.figure_naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.get_color.html">neurom.view.common.get_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.get_figure.html">neurom.view.common.get_figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.plot_labels.html">neurom.view.common.plot_labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.plot_legend.html">neurom.view.common.plot_legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.plot_limits.html">neurom.view.common.plot_limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.plot_sphere.html">neurom.view.common.plot_sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.plot_style.html">neurom.view.common.plot_style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.plot_ticks.html">neurom.view.common.plot_ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.plot_title.html">neurom.view.common.plot_title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.view.common.save_plot.html">neurom.view.common.save_plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.analysis.html">neurom.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.html">neurom.analysis.morphmath</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.angle_3points.html">neurom.analysis.morphmath.angle_3points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.average_points_dist.html">neurom.analysis.morphmath.average_points_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.path_distance.html">neurom.analysis.morphmath.path_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.point_dist.html">neurom.analysis.morphmath.point_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.point_dist2.html">neurom.analysis.morphmath.point_dist2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.polygon_diameter.html">neurom.analysis.morphmath.polygon_diameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.segment_area.html">neurom.analysis.morphmath.segment_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.segment_volume.html">neurom.analysis.morphmath.segment_volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.taper_rate.html">neurom.analysis.morphmath.taper_rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphmath.vector.html">neurom.analysis.morphmath.vector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.html">neurom.analysis.morphtree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.find_tree_type.html">neurom.analysis.morphtree.find_tree_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.get_bounding_box.html">neurom.analysis.morphtree.get_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.get_tree_type.html">neurom.analysis.morphtree.get_tree_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_local_bifurcation_angle.html">neurom.analysis.morphtree.i_local_bifurcation_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_remote_bifurcation_angle.html">neurom.analysis.morphtree.i_remote_bifurcation_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_section_length.html">neurom.analysis.morphtree.i_section_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_section_path_length.html">neurom.analysis.morphtree.i_section_path_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_section_radial_dist.html">neurom.analysis.morphtree.i_section_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_segment_length.html">neurom.analysis.morphtree.i_segment_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_segment_meander_angle.html">neurom.analysis.morphtree.i_segment_meander_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_segment_radial_dist.html">neurom.analysis.morphtree.i_segment_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.i_segment_radius.html">neurom.analysis.morphtree.i_segment_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.n_sections.html">neurom.analysis.morphtree.n_sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.path_length.html">neurom.analysis.morphtree.path_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.segment_length.html">neurom.analysis.morphtree.segment_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.segment_radial_dist.html">neurom.analysis.morphtree.segment_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.segment_radius.html">neurom.analysis.morphtree.segment_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../neurom/neurom.analysis.morphtree.set_tree_type.html">neurom.analysis.morphtree.set_tree_type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">NeuroM</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>neurom.view.common</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for neurom.view.common</h1><div class="highlight"><pre>
+<span class="c"># Copyright (c) 2015, Ecole Polytechnique Federale de Lausanne, Blue Brain Project</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># This file is part of NeuroM &lt;https://github.com/BlueBrain/NeuroM&gt;</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c"># modification, are permitted provided that the following conditions are met:</span>
+<span class="c">#</span>
+<span class="c">#     1. Redistributions of source code must retain the above copyright</span>
+<span class="c">#        notice, this list of conditions and the following disclaimer.</span>
+<span class="c">#     2. Redistributions in binary form must reproduce the above copyright</span>
+<span class="c">#        notice, this list of conditions and the following disclaimer in the</span>
+<span class="c">#        documentation and/or other materials provided with the distribution.</span>
+<span class="c">#     3. Neither the name of the copyright holder nor the names of</span>
+<span class="c">#        its contributors may be used to endorse or promote products</span>
+<span class="c">#        derived from this software without specific prior written permission.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND</span>
+<span class="c"># ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED</span>
+<span class="c"># WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span>
+<span class="c"># DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY</span>
+<span class="c"># DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES</span>
+<span class="c"># (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span>
+<span class="c"># LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND</span>
+<span class="c"># ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c"># (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS</span>
+<span class="c"># SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module containing the common functionality</span>
+<span class="sd">to be used by view-plot modules.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">neurom.core.types</span> <span class="kn">import</span> <span class="n">TreeType</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+
+<span class="c">#  Awful hack to use non-GUI backend when no display</span>
+<span class="c">#  is available. For unixy systems.</span>
+<span class="k">if</span> <span class="s">&#39;DISPLAY&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span> <span class="c"># noqa</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&#39;Agg&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>  <span class="c"># pylint: disable=unused-import</span>
+
+
+<span class="c"># Map tree type to color</span>
+<span class="n">TREE_COLOR</span> <span class="o">=</span> <span class="p">{</span><span class="n">TreeType</span><span class="o">.</span><span class="n">basal_dendrite</span><span class="p">:</span> <span class="s">&#39;red&#39;</span><span class="p">,</span>
+              <span class="n">TreeType</span><span class="o">.</span><span class="n">apical_dendrite</span><span class="p">:</span> <span class="s">&#39;purple&#39;</span><span class="p">,</span>
+              <span class="n">TreeType</span><span class="o">.</span><span class="n">axon</span><span class="p">:</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span>
+              <span class="n">TreeType</span><span class="o">.</span><span class="n">soma</span><span class="p">:</span> <span class="s">&#39;black&#39;</span><span class="p">,</span>
+              <span class="n">TreeType</span><span class="o">.</span><span class="n">undefined</span><span class="p">:</span> <span class="s">&#39;green&#39;</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="figure_naming"><a class="viewcode-back" href="../../../neurom/neurom.view.common.figure_naming.html#neurom.view.common.figure_naming">[docs]</a><span class="k">def</span> <span class="nf">figure_naming</span><span class="p">(</span><span class="n">pretitle</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">posttitle</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">prefile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">postfile</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helping function to define the strings that handle pre-post conventions</span>
+<span class="sd">    for viewing - plotting title and saving options.</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pretitle : str</span>
+<span class="sd">        String to include before the general title of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    posttitle : str</span>
+<span class="sd">        String to include after the general title of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    prefile : str</span>
+<span class="sd">        String to include before the general filename of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    postfile : str</span>
+<span class="sd">        String to include after the general filename of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    string_output : string</span>
+<span class="sd">        String to include in the figure name and title, in a suitable form.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">pretitle</span><span class="p">:</span>
+        <span class="n">pretitle</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pretitle</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> -- &quot;</span> <span class="o">%</span> <span class="n">pretitle</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">posttitle</span><span class="p">:</span>
+        <span class="n">posttitle</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">posttitle</span> <span class="o">=</span> <span class="s">&quot; -- </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">posttitle</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">prefile</span><span class="p">:</span>
+        <span class="n">prefile</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">prefile</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">_&quot;</span> <span class="o">%</span> <span class="n">prefile</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">postfile</span><span class="p">:</span>
+        <span class="n">postfile</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">postfile</span> <span class="o">=</span> <span class="s">&quot;_</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">postfile</span>
+
+    <span class="k">return</span> <span class="n">pretitle</span><span class="p">,</span> <span class="n">posttitle</span><span class="p">,</span> <span class="n">prefile</span><span class="p">,</span> <span class="n">postfile</span>
+
+</div>
+<div class="viewcode-block" id="get_color"><a class="viewcode-back" href="../../../neurom/neurom.view.common.get_color.html#neurom.view.common.get_color">[docs]</a><span class="k">def</span> <span class="nf">get_color</span><span class="p">(</span><span class="n">treecolor</span><span class="p">,</span> <span class="n">tree_type</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    If treecolor is None returns the color depending on the type:</span>
+<span class="sd">    Basal dendrite: &quot;red&quot;</span>
+<span class="sd">    Axon : &quot;blue&quot;</span>
+<span class="sd">    Apical dendrite: &quot;purple&quot;</span>
+<span class="sd">    Soma tree: &quot;black&quot;</span>
+<span class="sd">    Undefined or any other type: &quot;green&quot;</span>
+<span class="sd">    Otherwise returns the treecolor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">treecolor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">treecolor</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">TREE_COLOR</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tree_type</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="get_figure"><a class="viewcode-back" href="../../../neurom/neurom.view.common.get_figure.html#neurom.view.common.get_figure">[docs]</a><span class="k">def</span> <span class="nf">get_figure</span><span class="p">(</span><span class="n">new_fig</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">new_axes</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">subplot</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">no_axes</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to be used for viewing - plotting,</span>
+<span class="sd">    to initialize the matplotlib figure - axes.</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    ----------</span>
+<span class="sd">    new_fig : boolean</span>
+<span class="sd">        Defines if a new figure will be created.</span>
+<span class="sd">        If False the current figure is returned.</span>
+<span class="sd">        Default is True.</span>
+
+<span class="sd">    subplot : subplot or False</span>
+<span class="sd">        Defines if a subplot will be generated.</span>
+<span class="sd">        If False the subplot is the standard 111.</span>
+<span class="sd">        Default is False.</span>
+
+<span class="sd">    params: dict</span>
+<span class="sd">        If empty dictonary no supplementary parameters will be used.</span>
+<span class="sd">        If dict not empty the parameters will be passed to the initialization of the axes.</span>
+<span class="sd">        Default value is {}</span>
+
+<span class="sd">    no_axes: boolean</span>
+<span class="sd">        Defines the output of the function:</span>
+<span class="sd">        If False the axes is returned.</span>
+<span class="sd">        If True the figure is returned.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    figure or axes</span>
+<span class="sd">        Returns a figure if no_axes is True,</span>
+<span class="sd">        or axes if no_axes is False.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">new_fig</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">no_axes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fig</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">subplot</span><span class="p">:</span>
+        <span class="n">subplot</span> <span class="o">=</span> <span class="mi">111</span>
+
+    <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">new_axes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subplot</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">subplot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subplot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">subplot</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">subplot</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="save_plot"><a class="viewcode-back" href="../../../neurom/neurom.view.common.save_plot.html#neurom.view.common.save_plot">[docs]</a><span class="k">def</span> <span class="nf">save_plot</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to be used for viewing - plotting</span>
+<span class="sd">    to save a matplotlib figure.</span>
+
+<span class="sd">    Input</span>
+<span class="sd">    -------</span>
+<span class="sd">    fig: matplotlib figure</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    ----------</span>
+<span class="sd">    prefile : str</span>
+<span class="sd">        String to include before the general filename of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    postfile : str</span>
+<span class="sd">        String to include after the general filename of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    output_path : str</span>
+<span class="sd">        String to define the path to the output directory.</span>
+<span class="sd">        Default value is &#39;./&#39;</span>
+
+<span class="sd">    output_name : str</span>
+<span class="sd">        String to define the name of the output figure.</span>
+<span class="sd">        Default value is &#39;Figure&#39;</span>
+
+<span class="sd">    output_format : str</span>
+<span class="sd">        String to define the format of the output figure.</span>
+<span class="sd">        Default value is &#39;png&#39;</span>
+
+<span class="sd">    dpi: int</span>
+<span class="sd">        Define the DPI (Dots per Inch) of the figure.</span>
+<span class="sd">        Default value is 300.</span>
+
+<span class="sd">    transparent: boolean</span>
+<span class="sd">        If True the saved figure will have a transparent background.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Generates a figure file in the selected directory.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">prefile</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;prefile&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">postfile</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;postfile&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;output_path&#39;</span><span class="p">,</span> <span class="s">&#39;./&#39;</span><span class="p">)</span>
+    <span class="n">output_name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;output_name&#39;</span><span class="p">,</span> <span class="s">&#39;Figure&#39;</span><span class="p">)</span>
+    <span class="n">output_format</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;output_format&#39;</span><span class="p">,</span> <span class="s">&#39;png&#39;</span><span class="p">)</span>
+    <span class="n">dpi</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;dpi&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+    <span class="n">transparent</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;transparent&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span> <span class="c"># Make output directory if non-exsiting</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">prefile</span> <span class="o">+</span> <span class="n">output_name</span> <span class="o">+</span> <span class="n">postfile</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="n">output_format</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="n">transparent</span><span class="p">)</span>
+
+    <span class="k">print</span> <span class="s">&#39;Plot Saved:&#39;</span><span class="p">,</span> <span class="n">output</span>
+
+    <span class="k">return</span> <span class="n">fig</span>
+
+</div>
+<div class="viewcode-block" id="plot_style"><a class="viewcode-back" href="../../../neurom/neurom.view.common.plot_style.html#neurom.view.common.plot_style">[docs]</a><span class="k">def</span> <span class="nf">plot_style</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to set the basic options of a matplotlib figure,</span>
+<span class="sd">    to be used by viewing - plotting functions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax: matplotlib axes</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    -------</span>
+<span class="sd">    pretitle : str</span>
+<span class="sd">        String to include before the general title of the figure.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    posttitle : str</span>
+<span class="sd">        String to include after the general title of the figure.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    title : str</span>
+<span class="sd">        The title for the figure</span>
+<span class="sd">        Default value is &quot;Figure&quot;.</span>
+
+<span class="sd">    no_title : boolean</span>
+<span class="sd">        Defines the presence of a title in the figure.</span>
+<span class="sd">        If True the title will be set to an empty string &quot;&quot;.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    title_fontsize : int</span>
+<span class="sd">        Defines the size of the title&#39;s font.</span>
+<span class="sd">        Default value is 14.</span>
+
+<span class="sd">    title_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as title arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    xlabel : str</span>
+<span class="sd">        The xlabel for the figure</span>
+<span class="sd">        Default value is &quot;X&quot;.</span>
+
+<span class="sd">    ylabel : str</span>
+<span class="sd">        The xlabel for the figure</span>
+<span class="sd">        Default value is &quot;Y&quot;.</span>
+
+<span class="sd">    no_labels : boolean</span>
+<span class="sd">        Defines the presence of the labels in the figure.</span>
+<span class="sd">        If True the labels will be set to an empty string &quot;&quot;.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_xlabel : boolean</span>
+<span class="sd">        Defines the presence of the xlabel in the figure.</span>
+<span class="sd">        If True the xlabel will be set to an empty string &quot;&quot;.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_ylabel : boolean</span>
+<span class="sd">        Defines the presence of the ylabel in the figure.</span>
+<span class="sd">        If True the ylabel will be set to an empty string &quot;&quot;.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    label_fontsize : int</span>
+<span class="sd">        Defines the size of the labels&#39; font.</span>
+<span class="sd">        Default value is 14.</span>
+
+<span class="sd">    xlabel_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as xlabel arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    ylabel_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as ylabel arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    no_ticks : boolean</span>
+<span class="sd">        Defines the presence of x-y ticks in the figure.</span>
+<span class="sd">        If True the ticks will be empty.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_xticks : boolean</span>
+<span class="sd">        Defines the presence of x ticks in the figure.</span>
+<span class="sd">        If True the ticks will be empty.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_yticks : boolean</span>
+<span class="sd">        Defines the presence of y ticks in the figure.</span>
+<span class="sd">        If True the ticks will be empty.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    xticks : list of ticks</span>
+<span class="sd">        Defines the values of x ticks in the figure.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    yticks : list of ticks</span>
+<span class="sd">        Defines the values of y ticks in the figure.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    tick_fontsize : int</span>
+<span class="sd">        Defines the size of the ticks&#39; font.</span>
+<span class="sd">        Default value is 12.</span>
+
+<span class="sd">    xticks_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as xticks arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    yticks_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as yticks arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    no_limits : boolean</span>
+<span class="sd">        Defines the presence of plot limits in the figure.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_xlim : boolean</span>
+<span class="sd">        Defines the presence of plot x-limits in the figure.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_ylim : boolean</span>
+<span class="sd">        Defines the presence of plot y-limits in the figure.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    xlim: list of two floats</span>
+<span class="sd">        Defines the min and the max values in x-axis.</span>
+<span class="sd">        Default in None</span>
+
+<span class="sd">    ylim: list of two floats</span>
+<span class="sd">        Defines the min and the max values in y-axis.</span>
+<span class="sd">        Default in None</span>
+
+<span class="sd">    no_legend : boolean</span>
+<span class="sd">        Defines the presence of a legend in the figure.</span>
+<span class="sd">        If True the legend will not be included in the Figure.</span>
+<span class="sd">        Default value is True.</span>
+
+<span class="sd">    legend_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as legend arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    prefile : str</span>
+<span class="sd">        String to include before the general filename of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    postfile : str</span>
+<span class="sd">        String to include after the general filename of the figure.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    output_path : str</span>
+<span class="sd">        String to define the path to the output directory.</span>
+<span class="sd">        Default value is &#39;./&#39;</span>
+
+<span class="sd">    output_name : str</span>
+<span class="sd">        String to define the name of the output figure.</span>
+<span class="sd">        Default value is &#39;Figure&#39;</span>
+
+<span class="sd">    output_format : str</span>
+<span class="sd">        String to define the format of the output figure.</span>
+<span class="sd">        Default value is &#39;png&#39;</span>
+
+<span class="sd">    dpi: int</span>
+<span class="sd">        Define the DPI (Dots per Inch) of the figure.</span>
+<span class="sd">        Default value is 300.</span>
+
+<span class="sd">    transparent: boolean</span>
+<span class="sd">        If True the saved figure will have a transparent background.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    show_plot : boolean</span>
+<span class="sd">        If True the figure is displayed.</span>
+<span class="sd">        Default value is True.</span>
+
+<span class="sd">    no_axes: boolean</span>
+<span class="sd">        If True the labels and the frame will be set off.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    tight: boolean</span>
+<span class="sd">        If True the set layout of matplotlib will be activated.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    figure_output : figure, axes</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># Definition of title/file naming variables</span>
+    <span class="n">prefile</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;prefile&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">postfile</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;postfile&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">pretitle</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;pretitle&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">posttitle</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;posttitle&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="c"># Definition of global options</span>
+    <span class="n">no_axes</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;no_axes&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="n">show_plot</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;show_plot&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">tight</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;tight&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+    <span class="c"># Definition of save options</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;output_path&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="n">pretitle</span><span class="p">,</span> <span class="n">posttitle</span><span class="p">,</span> <span class="n">prefile</span><span class="p">,</span> <span class="n">postfile</span> <span class="o">=</span> <span class="n">figure_naming</span><span class="p">(</span><span class="n">pretitle</span><span class="p">,</span> <span class="n">posttitle</span><span class="p">,</span> <span class="n">prefile</span><span class="p">,</span> <span class="n">postfile</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_title</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_labels</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_ticks</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_limits</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_legend</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">no_axes</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_frame_on</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">tight</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">set_tight_layout</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">save_plot</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">show_plot</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="plot_title"><a class="viewcode-back" href="../../../neurom/neurom.view.common.plot_title.html#neurom.view.common.plot_title">[docs]</a><span class="k">def</span> <span class="nf">plot_title</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function that defines the title options</span>
+<span class="sd">    of a matplotlib plot.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fig: matplotlib figure</span>
+
+<span class="sd">    ax: matplotlib axes</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    -------</span>
+<span class="sd">    pretitle : str</span>
+<span class="sd">        String to include before the general title of the figure.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    posttitle : str</span>
+<span class="sd">        String to include after the general title of the figure.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    title : str</span>
+<span class="sd">        Set the title for the figure.</span>
+<span class="sd">        If &quot;&quot; no title will be added.</span>
+<span class="sd">        Default value is &quot;Figure&quot;.</span>
+
+<span class="sd">    title_fontsize : int</span>
+<span class="sd">        Defines the size of the title&#39;s font.</span>
+<span class="sd">        Default value is 14.</span>
+
+<span class="sd">    title_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as title arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    figure_output : figure, axes</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># Definition of title options</span>
+    <span class="n">pretitle</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;pretitle&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">posttitle</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;posttitle&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;Figure&#39;</span><span class="p">)</span>
+    <span class="n">title_fontsize</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;titlefontsize&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+    <span class="n">title_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;titlearg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">title_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">title_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">pretitle</span> <span class="o">+</span> <span class="n">title</span> <span class="o">+</span> <span class="n">posttitle</span><span class="p">,</span>
+                 <span class="n">fontsize</span><span class="o">=</span><span class="n">title_fontsize</span><span class="p">,</span> <span class="o">**</span><span class="n">title_arg</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="plot_labels"><a class="viewcode-back" href="../../../neurom/neurom.view.common.plot_labels.html#neurom.view.common.plot_labels">[docs]</a><span class="k">def</span> <span class="nf">plot_labels</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function that defines the labels options</span>
+<span class="sd">    of a matplotlib plot.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fig: matplotlib figure</span>
+
+<span class="sd">    ax: matplotlib axes</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    -------</span>
+<span class="sd">    xlabel : str</span>
+<span class="sd">        The xlabel for the figure.</span>
+<span class="sd">        For no_xlabel set to &#39;&#39;.</span>
+<span class="sd">        Default value is &quot;X&quot;.</span>
+
+<span class="sd">    ylabel : str</span>
+<span class="sd">        The xlabel for the figure.</span>
+<span class="sd">        For no_ylabel set to &#39;&#39;.</span>
+<span class="sd">        Default value is &quot;Y&quot;.</span>
+
+<span class="sd">    zlabel : str</span>
+<span class="sd">        The zlabel for the figure.</span>
+<span class="sd">        For no_zlabel set to &#39;&#39;.</span>
+<span class="sd">        Default value is &quot;Z&quot;.</span>
+
+<span class="sd">    label_fontsize : int</span>
+<span class="sd">        Defines the size of the labels&#39; font.</span>
+<span class="sd">        Default value is 14.</span>
+
+<span class="sd">    xlabel_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as xlabel arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    ylabel_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as ylabel arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    zlabel_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as zlabel arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    figure_output : figure, axes</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># Definition of label options</span>
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;xlabel&#39;</span><span class="p">,</span> <span class="s">&#39;X&#39;</span><span class="p">)</span>
+    <span class="n">ylabel</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;ylabel&#39;</span><span class="p">,</span> <span class="s">&#39;Y&#39;</span><span class="p">)</span>
+    <span class="n">zlabel</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;zlabel&#39;</span><span class="p">,</span> <span class="s">&#39;Z&#39;</span><span class="p">)</span>
+    <span class="n">label_fontsize</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;labelfontsize&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+    <span class="n">xlabel_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;xlabel_arg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">ylabel_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;ylabel_arg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">zlabel_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;zlabel_arg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">xlabel_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">xlabel_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">ylabel_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">ylabel_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">zlabel_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">zlabel_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_fontsize</span><span class="p">,</span> <span class="o">**</span><span class="n">xlabel_arg</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_fontsize</span><span class="p">,</span> <span class="o">**</span><span class="n">ylabel_arg</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="s">&#39;zaxis&#39;</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="n">zlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_fontsize</span><span class="p">,</span> <span class="o">**</span><span class="n">zlabel_arg</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="plot_ticks"><a class="viewcode-back" href="../../../neurom/neurom.view.common.plot_ticks.html#neurom.view.common.plot_ticks">[docs]</a><span class="k">def</span> <span class="nf">plot_ticks</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function that defines the labels options</span>
+<span class="sd">    of a matplotlib plot.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fig: matplotlib figure</span>
+
+<span class="sd">    ax: matplotlib axes</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    -------</span>
+<span class="sd">    xticks : list of ticks</span>
+<span class="sd">        Defines the values of x ticks in the figure.</span>
+<span class="sd">        If None the xticks will not be modified.</span>
+<span class="sd">        For no_xticks set to [].</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    yticks : list of ticks</span>
+<span class="sd">        Defines the values of y ticks in the figure.</span>
+<span class="sd">        If None the yticks will not be modified.</span>
+<span class="sd">        For no_yticks set to [].</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    zticks : list of ticks</span>
+<span class="sd">        Defines the values of z ticks in the figure.</span>
+<span class="sd">        If None the zticks will not be modified.</span>
+<span class="sd">        For no_zticks set to [].</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    tick_fontsize : int</span>
+<span class="sd">        Defines the size of the ticks&#39; font.</span>
+<span class="sd">        Default value is 12.</span>
+
+<span class="sd">    xticks_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as xticks arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    yticks_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as yticks arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    zticks_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as zticks arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    figure_output : figure, axes</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># Definition of tick options</span>
+    <span class="n">xticks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;xticks&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">yticks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;yticks&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">zticks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;zticks&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">tick_fontsize</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;tickfontsize&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+    <span class="n">xticks_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;xticksarg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">yticks_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;yticksarg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">zticks_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;zticksarg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">xticks_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">xticks_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">yticks_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">yticks_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">zticks_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">zticks_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">xticks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">xticks</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_fontsize</span><span class="p">,</span> <span class="o">**</span><span class="n">xticks_arg</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">yticks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">yticks</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_fontsize</span><span class="p">,</span> <span class="o">**</span><span class="n">yticks_arg</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">zticks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_zticks</span><span class="p">(</span><span class="n">zticks</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">zaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_fontsize</span><span class="p">,</span> <span class="o">**</span><span class="n">zticks_arg</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="plot_limits"><a class="viewcode-back" href="../../../neurom/neurom.view.common.plot_limits.html#neurom.view.common.plot_limits">[docs]</a><span class="k">def</span> <span class="nf">plot_limits</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function that defines the limit options</span>
+<span class="sd">    of a matplotlib plot.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fig: matplotlib figure</span>
+
+<span class="sd">    ax: matplotlib axes</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    -------</span>
+<span class="sd">    no_limits : boolean</span>
+<span class="sd">        Defines the presence of plot limits in the figure.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_xlim : boolean</span>
+<span class="sd">        Defines the presence of plot x-limits in the figure.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    no_ylim : boolean</span>
+<span class="sd">        Defines the presence of plot y-limits in the figure.</span>
+<span class="sd">        Default value is False.</span>
+
+<span class="sd">    xlim: list of two floats</span>
+<span class="sd">        Defines the min and the max values in x-axis.</span>
+<span class="sd">        Default in None</span>
+
+<span class="sd">    ylim: list of two floats</span>
+<span class="sd">        Defines the min and the max values in y-axis.</span>
+<span class="sd">        Default in None</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    figure_output : figure, axes</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># Definition of limit options</span>
+    <span class="n">no_xlim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;no_xlim&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="n">no_ylim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;no_ylim&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="n">no_zlim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;no_zlim&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="n">xlim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;xlim&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">ylim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;ylim&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">zlim</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;zlim&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">no_xlim</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">no_ylim</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="s">&#39;zaxis&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">no_zlim</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="n">zlim</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="plot_legend"><a class="viewcode-back" href="../../../neurom/neurom.view.common.plot_legend.html#neurom.view.common.plot_legend">[docs]</a><span class="k">def</span> <span class="nf">plot_legend</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function that defines the legend options</span>
+<span class="sd">    of a matplotlib plot.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fig: matplotlib figure</span>
+
+<span class="sd">    ax: matplotlib axes</span>
+
+<span class="sd">    Options</span>
+<span class="sd">    -------</span>
+<span class="sd">    no_legend : boolean</span>
+<span class="sd">        Defines the presence of a legend in the figure.</span>
+<span class="sd">        If True the legend will not be included in the Figure.</span>
+<span class="sd">        Default value is True.</span>
+
+<span class="sd">    legend_arg : dict</span>
+<span class="sd">        Defines the arguments that will be passsed</span>
+<span class="sd">        into matplotlib as legend arguments.</span>
+<span class="sd">        Default value is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    figure_output : figure, axes</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># Definition of legend options</span>
+    <span class="n">no_legend</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;no_legend&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">legend_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;legendarg&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">legend_arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">legend_arg</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">no_legend</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="o">**</span><span class="n">legend_arg</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="plot_sphere"><a class="viewcode-back" href="../../../neurom/neurom.view.common.plot_sphere.html#neurom.view.common.plot_sphere">[docs]</a><span class="k">def</span> <span class="nf">plot_sphere</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a 3d sphere, given the center and the radius.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Ecole Polytechnique Federale de Lausanne, Blue Brain Project.
+      Last updated on Aug 21, 2015.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.4.dev1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+neurom.view.common.plot_style
+=============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: plot_style

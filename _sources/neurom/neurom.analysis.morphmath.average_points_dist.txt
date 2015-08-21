@@ -1,0 +1,6 @@
+neurom.analysis.morphmath.average_points_dist
+=============================================
+
+.. currentmodule:: neurom.analysis.morphmath
+
+.. autofunction:: average_points_dist

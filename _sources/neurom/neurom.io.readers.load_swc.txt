@@ -1,0 +1,6 @@
+neurom.io.readers.load_swc
+==========================
+
+.. currentmodule:: neurom.io.readers
+
+.. autofunction:: load_swc

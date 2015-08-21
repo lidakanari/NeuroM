@@ -1,0 +1,6 @@
+neurom.core.tree.ibifurcation_point
+===================================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: ibifurcation_point

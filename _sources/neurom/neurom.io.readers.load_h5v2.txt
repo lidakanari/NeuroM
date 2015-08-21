@@ -1,0 +1,6 @@
+neurom.io.readers.load_h5v2
+===========================
+
+.. currentmodule:: neurom.io.readers
+
+.. autofunction:: load_h5v2

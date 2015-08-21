@@ -1,0 +1,6 @@
+neurom.io.utils.get_soma_ids
+============================
+
+.. currentmodule:: neurom.io.utils
+
+.. autofunction:: get_soma_ids

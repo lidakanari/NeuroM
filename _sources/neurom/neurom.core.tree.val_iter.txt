@@ -1,0 +1,6 @@
+neurom.core.tree.val_iter
+=========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: val_iter

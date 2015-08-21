@@ -1,0 +1,6 @@
+neurom.core.dataformat.POINT_TYPE.UNDEFINED
+===========================================
+
+.. currentmodule:: neurom.core.dataformat
+
+.. autoattribute:: POINT_TYPE.UNDEFINED

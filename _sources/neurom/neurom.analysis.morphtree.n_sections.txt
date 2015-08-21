@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.n_sections
+====================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: n_sections

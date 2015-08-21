@@ -1,0 +1,6 @@
+neurom.core.neuron.SomaB.__init__
+=================================
+
+.. currentmodule:: neurom.core.neuron
+
+.. automethod:: SomaB.__init__

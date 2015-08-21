@@ -1,0 +1,6 @@
+neurom.core.tree.is_root
+========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: is_root

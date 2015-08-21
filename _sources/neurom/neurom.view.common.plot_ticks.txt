@@ -1,0 +1,6 @@
+neurom.view.common.plot_ticks
+=============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: plot_ticks

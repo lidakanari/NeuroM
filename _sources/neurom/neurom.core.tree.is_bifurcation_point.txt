@@ -1,0 +1,6 @@
+neurom.core.tree.is_bifurcation_point
+=====================================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: is_bifurcation_point

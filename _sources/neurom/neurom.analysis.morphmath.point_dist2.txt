@@ -1,0 +1,6 @@
+neurom.analysis.morphmath.point_dist2
+=====================================
+
+.. currentmodule:: neurom.analysis.morphmath
+
+.. autofunction:: point_dist2

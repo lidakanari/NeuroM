@@ -1,0 +1,6 @@
+neurom.io.utils.get_initial_segment_ids
+=======================================
+
+.. currentmodule:: neurom.io.utils
+
+.. autofunction:: get_initial_segment_ids

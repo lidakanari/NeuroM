@@ -1,0 +1,6 @@
+neurom.view.common.save_plot
+============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: save_plot

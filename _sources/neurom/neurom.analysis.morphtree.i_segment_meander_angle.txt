@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.i_segment_meander_angle
+=================================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: i_segment_meander_angle

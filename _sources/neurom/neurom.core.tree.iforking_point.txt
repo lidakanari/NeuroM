@@ -1,0 +1,6 @@
+neurom.core.tree.iforking_point
+===============================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: iforking_point

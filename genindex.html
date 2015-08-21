@@ -1,0 +1,1412 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Index &mdash; NeuroM 0.0.4.dev1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="NeuroM 0.0.4.dev1 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> NeuroM
+        
+
+        
+          
+          <img src="_static/bbp.jpg" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NeuroM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#virtualenv-setup">Virtualenv setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#neurom-installation">NeuroM installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-from-the-bbp-pypi-server">Install from the BBP PyPI server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-from-git">Install from git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-from-source">Install from source</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#running-the-tests">Running the tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#building-the-documentation">Building the Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick and easy analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick.html#the-neurom-ezy-module">The <code class="docutils literal"><span class="pre">neurom.ezy</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick.html#data-checking-applications">Data checking applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tour.html">A Tour of NeuroM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tour.html#design-philosophy">Design philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tour.html#data-layout">Data Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tour.html#trees">Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tour.html#iterators">Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tour.html#cook-book">Cook-book</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tour.html#get-the-total-length-of-a-tree">Get the total length of a tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tour.html#get-the-path-length-to-an-end-point">Get the path length to an end-point</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">NeuroM morphology definitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#point">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#soma">Soma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#neurite-tree">Neurite tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html#neuron">Neuron</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.ezy.html">neurom.ezy</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.ezy.neuron.html">neurom.ezy.neuron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.html">neurom.ezy.neuron.Neuron</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.__init__.html">neurom.ezy.neuron.Neuron.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_local_bifurcation_angles.html">neurom.ezy.neuron.Neuron.get_local_bifurcation_angles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_n_neurites.html">neurom.ezy.neuron.Neuron.get_n_neurites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_n_sections.html">neurom.ezy.neuron.Neuron.get_n_sections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_n_sections_per_neurite.html">neurom.ezy.neuron.Neuron.get_n_sections_per_neurite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles.html">neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_section_lengths.html">neurom.ezy.neuron.Neuron.get_section_lengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_section_path_distances.html">neurom.ezy.neuron.Neuron.get_section_path_distances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_section_radial_distances.html">neurom.ezy.neuron.Neuron.get_section_radial_distances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_segment_lengths.html">neurom.ezy.neuron.Neuron.get_segment_lengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.get_soma_radius.html">neurom.ezy.neuron.Neuron.get_soma_radius</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.view.html">neurom.ezy.neuron.Neuron.view</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.ezy.neuron.Neuron.view3d.html">neurom.ezy.neuron.Neuron.view3d</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.html">neurom.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.utils.html">neurom.io.utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.get_initial_segment_ids.html">neurom.io.utils.get_initial_segment_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.get_soma_ids.html">neurom.io.utils.get_soma_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.load_neuron.html">neurom.io.utils.load_neuron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.make_neuron.html">neurom.io.utils.make_neuron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.utils.make_tree.html">neurom.io.utils.make_tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.readers.html">neurom.io.readers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_data.html">neurom.io.readers.load_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_h5v1.html">neurom.io.readers.load_h5v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_h5v2.html">neurom.io.readers.load_h5v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.load_swc.html">neurom.io.readers.load_swc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.html">neurom.io.readers.RawDataWrapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.__init__.html">neurom.io.readers.RawDataWrapper.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_children.html">neurom.io.readers.RawDataWrapper.get_children</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_col.html">neurom.io.readers.RawDataWrapper.get_col</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_end_points.html">neurom.io.readers.RawDataWrapper.get_end_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_fork_points.html">neurom.io.readers.RawDataWrapper.get_fork_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_ids.html">neurom.io.readers.RawDataWrapper.get_ids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_parent.html">neurom.io.readers.RawDataWrapper.get_parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_point.html">neurom.io.readers.RawDataWrapper.get_point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.get_row.html">neurom.io.readers.RawDataWrapper.get_row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.io.readers.RawDataWrapper.iter_row.html">neurom.io.readers.RawDataWrapper.iter_row</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.io.check.html">neurom.io.check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_all_finite_length_segments.html">neurom.io.check.has_all_finite_length_segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_all_finite_radius_neurites.html">neurom.io.check.has_all_finite_radius_neurites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_sequential_ids.html">neurom.io.check.has_sequential_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.has_soma_points.html">neurom.io.check.has_soma_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.io.check.is_neurite_segment.html">neurom.io.check.is_neurite_segment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.html">neurom.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.types.html">neurom.core.types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.types.TreeType.html">neurom.core.types.TreeType</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.all.html">neurom.core.types.TreeType.all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.apical_dendrite.html">neurom.core.types.TreeType.apical_dendrite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.axon.html">neurom.core.types.TreeType.axon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.basal_dendrite.html">neurom.core.types.TreeType.basal_dendrite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.soma.html">neurom.core.types.TreeType.soma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.types.TreeType.undefined.html">neurom.core.types.TreeType.undefined</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.tree.html">neurom.core.tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.i_branch_end_points.html">neurom.core.tree.i_branch_end_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ibifurcation_point.html">neurom.core.tree.ibifurcation_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.iforking_point.html">neurom.core.tree.iforking_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ileaf.html">neurom.core.tree.ileaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.imap_val.html">neurom.core.tree.imap_val</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ipostorder.html">neurom.core.tree.ipostorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.ipreorder.html">neurom.core.tree.ipreorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_bifurcation_point.html">neurom.core.tree.is_bifurcation_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_forking_point.html">neurom.core.tree.is_forking_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_leaf.html">neurom.core.tree.is_leaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.is_root.html">neurom.core.tree.is_root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.isection.html">neurom.core.tree.isection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.isegment.html">neurom.core.tree.isegment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.itriplet.html">neurom.core.tree.itriplet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.iupstream.html">neurom.core.tree.iupstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.val_iter.html">neurom.core.tree.val_iter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.tree.Tree.html">neurom.core.tree.Tree</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.tree.Tree.__init__.html">neurom.core.tree.Tree.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.tree.Tree.add_child.html">neurom.core.tree.Tree.add_child</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.neuron.html">neurom.core.neuron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.make_soma.html">neurom.core.neuron.make_soma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.BaseSoma.html">neurom.core.neuron.BaseSoma</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.BaseSoma.__init__.html">neurom.core.neuron.BaseSoma.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.BaseSoma.iter.html">neurom.core.neuron.BaseSoma.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.Neuron.html">neurom.core.neuron.Neuron</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.Neuron.__init__.html">neurom.core.neuron.Neuron.__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.html">neurom.core.neuron.SOMA_TYPE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.get_type.html">neurom.core.neuron.SOMA_TYPE.get_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.A.html">neurom.core.neuron.SOMA_TYPE.A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.B.html">neurom.core.neuron.SOMA_TYPE.B</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.C.html">neurom.core.neuron.SOMA_TYPE.C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SOMA_TYPE.INVALID.html">neurom.core.neuron.SOMA_TYPE.INVALID</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SomaA.html">neurom.core.neuron.SomaA</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaA.__init__.html">neurom.core.neuron.SomaA.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaA.iter.html">neurom.core.neuron.SomaA.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SomaB.html">neurom.core.neuron.SomaB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaB.__init__.html">neurom.core.neuron.SomaB.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaB.iter.html">neurom.core.neuron.SomaB.iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.neuron.SomaC.html">neurom.core.neuron.SomaC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaC.__init__.html">neurom.core.neuron.SomaC.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.neuron.SomaC.iter.html">neurom.core.neuron.SomaC.iter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.point.html">neurom.core.point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.point.as_point.html">neurom.core.point.as_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.point.Point.html">neurom.core.point.Point</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.count.html">neurom.core.point.Point.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.index.html">neurom.core.point.Point.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.r.html">neurom.core.point.Point.r</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.t.html">neurom.core.point.Point.t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.x.html">neurom.core.point.Point.x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.y.html">neurom.core.point.Point.y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.point.Point.z.html">neurom.core.point.Point.z</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.core.dataformat.html">neurom.core.dataformat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.html">neurom.core.dataformat.COLS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.ID.html">neurom.core.dataformat.COLS.ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.P.html">neurom.core.dataformat.COLS.P</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.R.html">neurom.core.dataformat.COLS.R</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.TYPE.html">neurom.core.dataformat.COLS.TYPE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.X.html">neurom.core.dataformat.COLS.X</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.Y.html">neurom.core.dataformat.COLS.Y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.COLS.Z.html">neurom.core.dataformat.COLS.Z</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.html">neurom.core.dataformat.POINT_TYPE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE.html">neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.AXON.html">neurom.core.dataformat.POINT_TYPE.AXON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE.html">neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.CUSTOM.html">neurom.core.dataformat.POINT_TYPE.CUSTOM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.END_POINT.html">neurom.core.dataformat.POINT_TYPE.END_POINT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.FORK_POINT.html">neurom.core.dataformat.POINT_TYPE.FORK_POINT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.NEURITES.html">neurom.core.dataformat.POINT_TYPE.NEURITES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.SOMA.html">neurom.core.dataformat.POINT_TYPE.SOMA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom/neurom.core.dataformat.POINT_TYPE.UNDEFINED.html">neurom.core.dataformat.POINT_TYPE.UNDEFINED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.exceptions.html">neurom.exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.exceptions.NeuroMError.html">neurom.exceptions.NeuroMError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.exceptions.NonConsecutiveIDsError.html">neurom.exceptions.NonConsecutiveIDsError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.exceptions.SomaError.html">neurom.exceptions.SomaError</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.view.html">neurom.view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.view.common.html">neurom.view.common</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.figure_naming.html">neurom.view.common.figure_naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.get_color.html">neurom.view.common.get_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.get_figure.html">neurom.view.common.get_figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_labels.html">neurom.view.common.plot_labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_legend.html">neurom.view.common.plot_legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_limits.html">neurom.view.common.plot_limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_sphere.html">neurom.view.common.plot_sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_style.html">neurom.view.common.plot_style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_ticks.html">neurom.view.common.plot_ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.plot_title.html">neurom.view.common.plot_title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.view.common.save_plot.html">neurom.view.common.save_plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.analysis.html">neurom.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.analysis.morphmath.html">neurom.analysis.morphmath</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.angle_3points.html">neurom.analysis.morphmath.angle_3points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.average_points_dist.html">neurom.analysis.morphmath.average_points_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.path_distance.html">neurom.analysis.morphmath.path_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.point_dist.html">neurom.analysis.morphmath.point_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.point_dist2.html">neurom.analysis.morphmath.point_dist2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.polygon_diameter.html">neurom.analysis.morphmath.polygon_diameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.segment_area.html">neurom.analysis.morphmath.segment_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.segment_volume.html">neurom.analysis.morphmath.segment_volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.taper_rate.html">neurom.analysis.morphmath.taper_rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphmath.vector.html">neurom.analysis.morphmath.vector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurom/neurom.analysis.morphtree.html">neurom.analysis.morphtree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.find_tree_type.html">neurom.analysis.morphtree.find_tree_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.get_bounding_box.html">neurom.analysis.morphtree.get_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.get_tree_type.html">neurom.analysis.morphtree.get_tree_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_local_bifurcation_angle.html">neurom.analysis.morphtree.i_local_bifurcation_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_remote_bifurcation_angle.html">neurom.analysis.morphtree.i_remote_bifurcation_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_section_length.html">neurom.analysis.morphtree.i_section_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_section_path_length.html">neurom.analysis.morphtree.i_section_path_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_section_radial_dist.html">neurom.analysis.morphtree.i_section_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_length.html">neurom.analysis.morphtree.i_segment_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_meander_angle.html">neurom.analysis.morphtree.i_segment_meander_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_radial_dist.html">neurom.analysis.morphtree.i_segment_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.i_segment_radius.html">neurom.analysis.morphtree.i_segment_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.n_sections.html">neurom.analysis.morphtree.n_sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.path_length.html">neurom.analysis.morphtree.path_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.segment_length.html">neurom.analysis.morphtree.segment_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.segment_radial_dist.html">neurom.analysis.morphtree.segment_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.segment_radius.html">neurom.analysis.morphtree.segment_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom/neurom.analysis.morphtree.set_tree_type.html">neurom.analysis.morphtree.set_tree_type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">NeuroM</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.neuron.BaseSoma.__init__.html#neurom.core.neuron.BaseSoma.__init__">__init__() (neurom.core.neuron.BaseSoma method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.core.neuron.Neuron.__init__.html#neurom.core.neuron.Neuron.__init__">(neurom.core.neuron.Neuron method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.core.neuron.SomaA.__init__.html#neurom.core.neuron.SomaA.__init__">(neurom.core.neuron.SomaA method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.core.neuron.SomaB.__init__.html#neurom.core.neuron.SomaB.__init__">(neurom.core.neuron.SomaB method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.core.neuron.SomaC.__init__.html#neurom.core.neuron.SomaC.__init__">(neurom.core.neuron.SomaC method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.core.tree.Tree.__init__.html#neurom.core.tree.Tree.__init__">(neurom.core.tree.Tree method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.ezy.Neuron.__init__.html#neurom.ezy.Neuron.__init__">(neurom.ezy.Neuron method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.__init__.html#neurom.ezy.neuron.Neuron.__init__">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.__init__.html#neurom.io.readers.RawDataWrapper.__init__">(neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.neuron.SOMA_TYPE.A.html#neurom.core.neuron.SOMA_TYPE.A">A (neurom.core.neuron.SOMA_TYPE attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.Tree.add_child.html#neurom.core.tree.Tree.add_child">add_child() (neurom.core.tree.Tree method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.types.TreeType.all.html#neurom.core.types.TreeType.all">all (neurom.core.types.TreeType attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.angle_3points.html#neurom.analysis.morphmath.angle_3points">angle_3points() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE.html#neurom.core.dataformat.POINT_TYPE.APICAL_DENDRITE">APICAL_DENDRITE (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.types.TreeType.apical_dendrite.html#neurom.core.types.TreeType.apical_dendrite">apical_dendrite (neurom.core.types.TreeType attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.point.as_point.html#neurom.core.point.as_point">as_point() (in module neurom.core.point)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.average_points_dist.html#neurom.analysis.morphmath.average_points_dist">average_points_dist() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.AXON.html#neurom.core.dataformat.POINT_TYPE.AXON">AXON (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.types.TreeType.axon.html#neurom.core.types.TreeType.axon">axon (neurom.core.types.TreeType attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.neuron.SOMA_TYPE.B.html#neurom.core.neuron.SOMA_TYPE.B">B (neurom.core.neuron.SOMA_TYPE attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE.html#neurom.core.dataformat.POINT_TYPE.BASAL_DENDRITE">BASAL_DENDRITE (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.types.TreeType.basal_dendrite.html#neurom.core.types.TreeType.basal_dendrite">basal_dendrite (neurom.core.types.TreeType attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.BaseSoma.html#neurom.core.neuron.BaseSoma">BaseSoma (class in neurom.core.neuron)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.neuron.SOMA_TYPE.C.html#neurom.core.neuron.SOMA_TYPE.C">C (neurom.core.neuron.SOMA_TYPE attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.html#neurom.core.dataformat.COLS">COLS (class in neurom.core.dataformat)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.point.Point.count.html#neurom.core.point.Point.count">count() (neurom.core.point.Point method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.CUSTOM.html#neurom.core.dataformat.POINT_TYPE.CUSTOM">CUSTOM (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.END_POINT.html#neurom.core.dataformat.POINT_TYPE.END_POINT">END_POINT (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.view.common.figure_naming.html#neurom.view.common.figure_naming">figure_naming() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.find_tree_type.html#neurom.analysis.morphtree.find_tree_type">find_tree_type() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.FORK_POINT.html#neurom.core.dataformat.POINT_TYPE.FORK_POINT">FORK_POINT (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.get_bounding_box.html#neurom.analysis.morphtree.get_bounding_box">get_bounding_box() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_children.html#neurom.io.readers.RawDataWrapper.get_children">get_children() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_col.html#neurom.io.readers.RawDataWrapper.get_col">get_col() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.get_color.html#neurom.view.common.get_color">get_color() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_end_points.html#neurom.io.readers.RawDataWrapper.get_end_points">get_end_points() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.get_figure.html#neurom.view.common.get_figure">get_figure() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_fork_points.html#neurom.io.readers.RawDataWrapper.get_fork_points">get_fork_points() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_ids.html#neurom.io.readers.RawDataWrapper.get_ids">get_ids() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.utils.get_initial_segment_ids.html#neurom.io.utils.get_initial_segment_ids">get_initial_segment_ids() (in module neurom.io.utils)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_local_bifurcation_angles.html#neurom.ezy.Neuron.get_local_bifurcation_angles">get_local_bifurcation_angles() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_local_bifurcation_angles.html#neurom.ezy.neuron.Neuron.get_local_bifurcation_angles">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_n_neurites.html#neurom.ezy.Neuron.get_n_neurites">get_n_neurites() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_n_neurites.html#neurom.ezy.neuron.Neuron.get_n_neurites">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_n_sections.html#neurom.ezy.Neuron.get_n_sections">get_n_sections() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_n_sections.html#neurom.ezy.neuron.Neuron.get_n_sections">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_n_sections_per_neurite.html#neurom.ezy.Neuron.get_n_sections_per_neurite">get_n_sections_per_neurite() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_n_sections_per_neurite.html#neurom.ezy.neuron.Neuron.get_n_sections_per_neurite">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_parent.html#neurom.io.readers.RawDataWrapper.get_parent">get_parent() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_point.html#neurom.io.readers.RawDataWrapper.get_point">get_point() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_remote_bifurcation_angles.html#neurom.ezy.Neuron.get_remote_bifurcation_angles">get_remote_bifurcation_angles() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles.html#neurom.ezy.neuron.Neuron.get_remote_bifurcation_angles">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.get_row.html#neurom.io.readers.RawDataWrapper.get_row">get_row() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_section_lengths.html#neurom.ezy.Neuron.get_section_lengths">get_section_lengths() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_section_lengths.html#neurom.ezy.neuron.Neuron.get_section_lengths">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_section_path_distances.html#neurom.ezy.Neuron.get_section_path_distances">get_section_path_distances() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_section_path_distances.html#neurom.ezy.neuron.Neuron.get_section_path_distances">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_section_radial_distances.html#neurom.ezy.Neuron.get_section_radial_distances">get_section_radial_distances() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_section_radial_distances.html#neurom.ezy.neuron.Neuron.get_section_radial_distances">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_segment_lengths.html#neurom.ezy.Neuron.get_segment_lengths">get_segment_lengths() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_segment_lengths.html#neurom.ezy.neuron.Neuron.get_segment_lengths">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.io.utils.get_soma_ids.html#neurom.io.utils.get_soma_ids">get_soma_ids() (in module neurom.io.utils)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.get_soma_radius.html#neurom.ezy.Neuron.get_soma_radius">get_soma_radius() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.get_soma_radius.html#neurom.ezy.neuron.Neuron.get_soma_radius">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.get_tree_type.html#neurom.analysis.morphtree.get_tree_type">get_tree_type() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.SOMA_TYPE.get_type.html#neurom.core.neuron.SOMA_TYPE.get_type">get_type() (neurom.core.neuron.SOMA_TYPE static method)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.check.has_all_finite_length_segments.html#neurom.io.check.has_all_finite_length_segments">has_all_finite_length_segments() (in module neurom.io.check)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.check.has_all_finite_radius_neurites.html#neurom.io.check.has_all_finite_radius_neurites">has_all_finite_radius_neurites() (in module neurom.io.check)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.check.has_sequential_ids.html#neurom.io.check.has_sequential_ids">has_sequential_ids() (in module neurom.io.check)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.check.has_soma_points.html#neurom.io.check.has_soma_points">has_soma_points() (in module neurom.io.check)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.tree.i_branch_end_points.html#neurom.core.tree.i_branch_end_points">i_branch_end_points() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_local_bifurcation_angle.html#neurom.analysis.morphtree.i_local_bifurcation_angle">i_local_bifurcation_angle() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_remote_bifurcation_angle.html#neurom.analysis.morphtree.i_remote_bifurcation_angle">i_remote_bifurcation_angle() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_section_length.html#neurom.analysis.morphtree.i_section_length">i_section_length() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_section_path_length.html#neurom.analysis.morphtree.i_section_path_length">i_section_path_length() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_section_radial_dist.html#neurom.analysis.morphtree.i_section_radial_dist">i_section_radial_dist() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_segment_length.html#neurom.analysis.morphtree.i_segment_length">i_segment_length() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_segment_meander_angle.html#neurom.analysis.morphtree.i_segment_meander_angle">i_segment_meander_angle() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_segment_radial_dist.html#neurom.analysis.morphtree.i_segment_radial_dist">i_segment_radial_dist() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.i_segment_radius.html#neurom.analysis.morphtree.i_segment_radius">i_segment_radius() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.ibifurcation_point.html#neurom.core.tree.ibifurcation_point">ibifurcation_point() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.ID.html#neurom.core.dataformat.COLS.ID">ID (neurom.core.dataformat.COLS attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.iforking_point.html#neurom.core.tree.iforking_point">iforking_point() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.ileaf.html#neurom.core.tree.ileaf">ileaf() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.imap_val.html#neurom.core.tree.imap_val">imap_val() (in module neurom.core.tree)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.point.Point.index.html#neurom.core.point.Point.index">index() (neurom.core.point.Point method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.SOMA_TYPE.INVALID.html#neurom.core.neuron.SOMA_TYPE.INVALID">INVALID (neurom.core.neuron.SOMA_TYPE attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.ipostorder.html#neurom.core.tree.ipostorder">ipostorder() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.ipreorder.html#neurom.core.tree.ipreorder">ipreorder() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.is_bifurcation_point.html#neurom.core.tree.is_bifurcation_point">is_bifurcation_point() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.is_forking_point.html#neurom.core.tree.is_forking_point">is_forking_point() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.is_leaf.html#neurom.core.tree.is_leaf">is_leaf() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.check.is_neurite_segment.html#neurom.io.check.is_neurite_segment">is_neurite_segment() (in module neurom.io.check)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.is_root.html#neurom.core.tree.is_root">is_root() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.isection.html#neurom.core.tree.isection">isection() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.isegment.html#neurom.core.tree.isegment">isegment() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.BaseSoma.iter.html#neurom.core.neuron.BaseSoma.iter">iter() (neurom.core.neuron.BaseSoma method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.core.neuron.SomaA.iter.html#neurom.core.neuron.SomaA.iter">(neurom.core.neuron.SomaA method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.core.neuron.SomaB.iter.html#neurom.core.neuron.SomaB.iter">(neurom.core.neuron.SomaB method)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.core.neuron.SomaC.iter.html#neurom.core.neuron.SomaC.iter">(neurom.core.neuron.SomaC method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.iter_row.html#neurom.io.readers.RawDataWrapper.iter_row">iter_row() (neurom.io.readers.RawDataWrapper method)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.itriplet.html#neurom.core.tree.itriplet">itriplet() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.iupstream.html#neurom.core.tree.iupstream">iupstream() (in module neurom.core.tree)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.readers.load_data.html#neurom.io.readers.load_data">load_data() (in module neurom.io.readers)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.load_h5v1.html#neurom.io.readers.load_h5v1">load_h5v1() (in module neurom.io.readers)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.load_h5v2.html#neurom.io.readers.load_h5v2">load_h5v2() (in module neurom.io.readers)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.utils.load_neuron.html#neurom.io.utils.load_neuron">load_neuron() (in module neurom.io.utils)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.load_swc.html#neurom.io.readers.load_swc">load_swc() (in module neurom.io.readers)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.utils.make_neuron.html#neurom.io.utils.make_neuron">make_neuron() (in module neurom.io.utils)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.make_soma.html#neurom.core.neuron.make_soma">make_soma() (in module neurom.core.neuron)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.utils.make_tree.html#neurom.io.utils.make_tree">make_tree() (in module neurom.io.utils)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.n_sections.html#neurom.analysis.morphtree.n_sections">n_sections() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.NEURITES.html#neurom.core.dataformat.POINT_TYPE.NEURITES">NEURITES (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.html#module-neurom.analysis">neurom.analysis (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.html#module-neurom.analysis.morphmath">neurom.analysis.morphmath (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.html#module-neurom.analysis.morphtree">neurom.analysis.morphtree (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.html#module-neurom.core">neurom.core (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.html#module-neurom.core.dataformat">neurom.core.dataformat (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.html#module-neurom.core.neuron">neurom.core.neuron (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.point.html#module-neurom.core.point">neurom.core.point (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.html#module-neurom.core.tree">neurom.core.tree (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.types.html#module-neurom.core.types">neurom.core.types (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.exceptions.html#module-neurom.exceptions">neurom.exceptions (module)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.ezy.html#module-neurom.ezy">neurom.ezy (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.ezy.neuron.html#module-neurom.ezy.neuron">neurom.ezy.neuron (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.html#module-neurom.io">neurom.io (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.check.html#module-neurom.io.check">neurom.io.check (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.readers.html#module-neurom.io.readers">neurom.io.readers (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.io.utils.html#module-neurom.io.utils">neurom.io.utils (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.html#module-neurom.view">neurom.view (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.html#module-neurom.view.common">neurom.view.common (module)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.exceptions.NeuroMError.html#neurom.exceptions.NeuroMError">NeuroMError</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.Neuron.html#neurom.core.neuron.Neuron">Neuron (class in neurom.core.neuron)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.Neuron.html#neurom.ezy.Neuron">(class in neurom.ezy)</a>
+  </dt>
+
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.html#neurom.ezy.neuron.Neuron">(class in neurom.ezy.neuron)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.exceptions.NonConsecutiveIDsError.html#neurom.exceptions.NonConsecutiveIDsError">NonConsecutiveIDsError</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.P.html#neurom.core.dataformat.COLS.P">P (neurom.core.dataformat.COLS attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.path_distance.html#neurom.analysis.morphmath.path_distance">path_distance() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.path_length.html#neurom.analysis.morphtree.path_length">path_length() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.plot_labels.html#neurom.view.common.plot_labels">plot_labels() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.plot_legend.html#neurom.view.common.plot_legend">plot_legend() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.plot_limits.html#neurom.view.common.plot_limits">plot_limits() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.plot_sphere.html#neurom.view.common.plot_sphere">plot_sphere() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.plot_style.html#neurom.view.common.plot_style">plot_style() (in module neurom.view.common)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.view.common.plot_ticks.html#neurom.view.common.plot_ticks">plot_ticks() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.view.common.plot_title.html#neurom.view.common.plot_title">plot_title() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.point.Point.html#neurom.core.point.Point">Point (class in neurom.core.point)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.point_dist.html#neurom.analysis.morphmath.point_dist">point_dist() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.point_dist2.html#neurom.analysis.morphmath.point_dist2">point_dist2() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.html#neurom.core.dataformat.POINT_TYPE">POINT_TYPE (class in neurom.core.dataformat)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.polygon_diameter.html#neurom.analysis.morphmath.polygon_diameter">polygon_diameter() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.R.html#neurom.core.dataformat.COLS.R">R (neurom.core.dataformat.COLS attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.point.Point.r.html#neurom.core.point.Point.r">r (neurom.core.point.Point attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.io.readers.RawDataWrapper.html#neurom.io.readers.RawDataWrapper">RawDataWrapper (class in neurom.io.readers)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.view.common.save_plot.html#neurom.view.common.save_plot">save_plot() (in module neurom.view.common)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.segment_area.html#neurom.analysis.morphmath.segment_area">segment_area() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.segment_length.html#neurom.analysis.morphtree.segment_length">segment_length() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.segment_radial_dist.html#neurom.analysis.morphtree.segment_radial_dist">segment_radial_dist() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.segment_radius.html#neurom.analysis.morphtree.segment_radius">segment_radius() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.segment_volume.html#neurom.analysis.morphmath.segment_volume">segment_volume() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphtree.set_tree_type.html#neurom.analysis.morphtree.set_tree_type">set_tree_type() (in module neurom.analysis.morphtree)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.SOMA.html#neurom.core.dataformat.POINT_TYPE.SOMA">SOMA (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.types.TreeType.soma.html#neurom.core.types.TreeType.soma">soma (neurom.core.types.TreeType attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.SOMA_TYPE.html#neurom.core.neuron.SOMA_TYPE">SOMA_TYPE (class in neurom.core.neuron)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.SomaA.html#neurom.core.neuron.SomaA">SomaA (class in neurom.core.neuron)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.SomaB.html#neurom.core.neuron.SomaB">SomaB (class in neurom.core.neuron)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.neuron.SomaC.html#neurom.core.neuron.SomaC">SomaC (class in neurom.core.neuron)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.exceptions.SomaError.html#neurom.exceptions.SomaError">SomaError</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.point.Point.t.html#neurom.core.point.Point.t">t (neurom.core.point.Point attribute)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.taper_rate.html#neurom.analysis.morphmath.taper_rate">taper_rate() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.tree.Tree.html#neurom.core.tree.Tree">Tree (class in neurom.core.tree)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.types.TreeType.html#neurom.core.types.TreeType">TreeType (class in neurom.core.types)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.TYPE.html#neurom.core.dataformat.COLS.TYPE">TYPE (neurom.core.dataformat.COLS attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.POINT_TYPE.UNDEFINED.html#neurom.core.dataformat.POINT_TYPE.UNDEFINED">UNDEFINED (neurom.core.dataformat.POINT_TYPE attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.types.TreeType.undefined.html#neurom.core.types.TreeType.undefined">undefined (neurom.core.types.TreeType attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.tree.val_iter.html#neurom.core.tree.val_iter">val_iter() (in module neurom.core.tree)</a>
+  </dt>
+
+      
+  <dt><a href="neurom/neurom.analysis.morphmath.vector.html#neurom.analysis.morphmath.vector">vector() (in module neurom.analysis.morphmath)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.view.html#neurom.ezy.Neuron.view">view() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.view.html#neurom.ezy.neuron.Neuron.view">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="neurom/neurom.ezy.Neuron.view3d.html#neurom.ezy.Neuron.view3d">view3d() (neurom.ezy.Neuron method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="neurom/neurom.ezy.neuron.Neuron.view3d.html#neurom.ezy.neuron.Neuron.view3d">(neurom.ezy.neuron.Neuron method)</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.X.html#neurom.core.dataformat.COLS.X">X (neurom.core.dataformat.COLS attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.point.Point.x.html#neurom.core.point.Point.x">x (neurom.core.point.Point attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.Y.html#neurom.core.dataformat.COLS.Y">Y (neurom.core.dataformat.COLS attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.point.Point.y.html#neurom.core.point.Point.y">y (neurom.core.point.Point attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.dataformat.COLS.Z.html#neurom.core.dataformat.COLS.Z">Z (neurom.core.dataformat.COLS attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="neurom/neurom.core.point.Point.z.html#neurom.core.point.Point.z">z (neurom.core.point.Point attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Ecole Polytechnique Federale de Lausanne, Blue Brain Project.
+      Last updated on Aug 21, 2015.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.4.dev1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+neurom.view.common.get_figure
+=============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: get_figure

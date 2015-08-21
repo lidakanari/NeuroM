@@ -1,0 +1,6 @@
+neurom.io.readers.load_data
+===========================
+
+.. currentmodule:: neurom.io.readers
+
+.. autofunction:: load_data

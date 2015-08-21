@@ -1,0 +1,6 @@
+neurom.io.check.is_neurite_segment
+==================================
+
+.. currentmodule:: neurom.io.check
+
+.. autofunction:: is_neurite_segment

@@ -1,0 +1,6 @@
+neurom.core.tree.i_branch_end_points
+====================================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: i_branch_end_points

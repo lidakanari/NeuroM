@@ -1,0 +1,6 @@
+neurom.core.types.TreeType.basal_dendrite
+=========================================
+
+.. currentmodule:: neurom.core.types
+
+.. autoattribute:: TreeType.basal_dendrite

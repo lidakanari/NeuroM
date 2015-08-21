@@ -1,0 +1,6 @@
+neurom.view.common.plot_sphere
+==============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: plot_sphere

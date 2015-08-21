@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.path_length
+=====================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: path_length

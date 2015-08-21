@@ -1,0 +1,6 @@
+neurom.view.common.plot_labels
+==============================
+
+.. currentmodule:: neurom.view.common
+
+.. autofunction:: plot_labels

@@ -1,0 +1,6 @@
+neurom.core.point.Point.count
+=============================
+
+.. currentmodule:: neurom.core.point
+
+.. automethod:: Point.count

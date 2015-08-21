@@ -1,0 +1,6 @@
+neurom.io.readers.RawDataWrapper.get_row
+========================================
+
+.. currentmodule:: neurom.io.readers
+
+.. automethod:: RawDataWrapper.get_row

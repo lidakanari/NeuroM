@@ -1,0 +1,6 @@
+neurom.io.check.has_all_finite_radius_neurites
+==============================================
+
+.. currentmodule:: neurom.io.check
+
+.. autofunction:: has_all_finite_radius_neurites

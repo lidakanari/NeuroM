@@ -1,0 +1,6 @@
+neurom.core.neuron.SOMA_TYPE.get_type
+=====================================
+
+.. currentmodule:: neurom.core.neuron
+
+.. automethod:: SOMA_TYPE.get_type

@@ -1,0 +1,6 @@
+neurom.core.tree.ipostorder
+===========================
+
+.. currentmodule:: neurom.core.tree
+
+.. autofunction:: ipostorder

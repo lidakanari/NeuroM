@@ -1,0 +1,6 @@
+neurom.exceptions.NeuroMError
+=============================
+
+.. currentmodule:: neurom.exceptions
+
+.. autoexception:: NeuroMError

@@ -1,0 +1,6 @@
+neurom.core.neuron.make_soma
+============================
+
+.. currentmodule:: neurom.core.neuron
+
+.. autofunction:: make_soma
