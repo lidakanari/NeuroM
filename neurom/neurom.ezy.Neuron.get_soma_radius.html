@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>neurom.ezy.Neuron.get_soma_radius &mdash; NeuroM 0.0.4.dev1 documentation</title>
+  <title>neurom.ezy.Neuron.get_soma_radius &mdash; NeuroM 0.0.6.dev0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="NeuroM 0.0.4.dev1 documentation" href="../index.html"/> 
+    <link rel="top" title="NeuroM 0.0.6.dev0 documentation" href="../index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -132,6 +132,11 @@
 <li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.get_section_radial_distances.html">neurom.ezy.neuron.Neuron.get_section_radial_distances</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.get_segment_lengths.html">neurom.ezy.neuron.Neuron.get_segment_lengths</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.get_soma_radius.html">neurom.ezy.neuron.Neuron.get_soma_radius</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.iter_points.html">neurom.ezy.neuron.Neuron.iter_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.iter_sections.html">neurom.ezy.neuron.Neuron.iter_sections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.iter_segments.html">neurom.ezy.neuron.Neuron.iter_segments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.neurite_iter.html">neurom.ezy.neuron.Neuron.neurite_iter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.neurite_loop.html">neurom.ezy.neuron.Neuron.neurite_loop</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.view.html">neurom.ezy.neuron.Neuron.view</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neurom.ezy.neuron.Neuron.view3d.html">neurom.ezy.neuron.Neuron.view3d</a></li>
 </ul>
@@ -177,6 +182,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="neurom.core.html">neurom.core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="neurom.core.types.html">neurom.core.types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurom.core.types.checkTreeType.html">neurom.core.types.checkTreeType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.core.types.TreeType.html">neurom.core.types.TreeType</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="neurom.core.types.TreeType.all.html">neurom.core.types.TreeType.all</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neurom.core.types.TreeType.apical_dendrite.html">neurom.core.types.TreeType.apical_dendrite</a></li>
@@ -221,6 +227,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.core.neuron.Neuron.html">neurom.core.neuron.Neuron</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="neurom.core.neuron.Neuron.__init__.html">neurom.core.neuron.Neuron.__init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurom.core.neuron.Neuron.i_neurite.html">neurom.core.neuron.Neuron.i_neurite</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.core.neuron.SOMA_TYPE.html">neurom.core.neuron.SOMA_TYPE</a><ul>
@@ -317,6 +324,9 @@
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.point_dist2.html">neurom.analysis.morphmath.point_dist2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.polygon_diameter.html">neurom.analysis.morphmath.polygon_diameter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.segment_area.html">neurom.analysis.morphmath.segment_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.segment_length.html">neurom.analysis.morphmath.segment_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.segment_radial_dist.html">neurom.analysis.morphmath.segment_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.segment_radius.html">neurom.analysis.morphmath.segment_radius</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.segment_volume.html">neurom.analysis.morphmath.segment_volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.taper_rate.html">neurom.analysis.morphmath.taper_rate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphmath.vector.html">neurom.analysis.morphmath.vector</a></li>
@@ -331,15 +341,15 @@
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_section_length.html">neurom.analysis.morphtree.i_section_length</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_section_path_length.html">neurom.analysis.morphtree.i_section_path_length</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_section_radial_dist.html">neurom.analysis.morphtree.i_section_radial_dist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_segment_area.html">neurom.analysis.morphtree.i_segment_area</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_segment_length.html">neurom.analysis.morphtree.i_segment_length</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_segment_meander_angle.html">neurom.analysis.morphtree.i_segment_meander_angle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_segment_radial_dist.html">neurom.analysis.morphtree.i_segment_radial_dist</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_segment_radius.html">neurom.analysis.morphtree.i_segment_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.i_segment_volume.html">neurom.analysis.morphtree.i_segment_volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.local_bifurcation_angle.html">neurom.analysis.morphtree.local_bifurcation_angle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.n_sections.html">neurom.analysis.morphtree.n_sections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.path_length.html">neurom.analysis.morphtree.path_length</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.segment_length.html">neurom.analysis.morphtree.segment_length</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.segment_radial_dist.html">neurom.analysis.morphtree.segment_radial_dist</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.segment_radius.html">neurom.analysis.morphtree.segment_radius</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurom.analysis.morphtree.set_tree_type.html">neurom.analysis.morphtree.set_tree_type</a></li>
 </ul>
 </li>
@@ -402,7 +412,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, Ecole Polytechnique Federale de Lausanne, Blue Brain Project.
-      Last updated on Aug 21, 2015.
+      Last updated on Aug 26, 2015.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
@@ -423,7 +433,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.0.4.dev1',
+            VERSION:'0.0.6.dev0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

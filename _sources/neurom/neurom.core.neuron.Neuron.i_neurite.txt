@@ -1,0 +1,6 @@
+neurom.core.neuron.Neuron.i_neurite
+===================================
+
+.. currentmodule:: neurom.core.neuron
+
+.. automethod:: Neuron.i_neurite

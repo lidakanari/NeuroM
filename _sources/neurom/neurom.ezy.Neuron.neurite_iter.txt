@@ -1,0 +1,6 @@
+neurom.ezy.Neuron.neurite_iter
+==============================
+
+.. currentmodule:: neurom.ezy
+
+.. automethod:: Neuron.neurite_iter

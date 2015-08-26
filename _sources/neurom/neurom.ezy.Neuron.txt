@@ -51,6 +51,11 @@ neurom.ezy.Neuron
       ~Neuron.get_section_radial_distances
       ~Neuron.get_segment_lengths
       ~Neuron.get_soma_radius
+      ~Neuron.iter_points
+      ~Neuron.iter_sections
+      ~Neuron.iter_segments
+      ~Neuron.neurite_iter
+      ~Neuron.neurite_loop
       ~Neuron.view
       ~Neuron.view3d
    

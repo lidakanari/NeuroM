@@ -32,6 +32,14 @@ neurom.core.types
 .. automodule:: neurom.core.types
 
    
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+      :nosignatures:
+   
+      ~checkTreeType
+   
 
    
    .. rubric:: Classes

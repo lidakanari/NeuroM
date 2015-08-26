@@ -46,15 +46,15 @@ neurom.analysis.morphtree
       ~i_section_length
       ~i_section_path_length
       ~i_section_radial_dist
+      ~i_segment_area
       ~i_segment_length
       ~i_segment_meander_angle
       ~i_segment_radial_dist
       ~i_segment_radius
+      ~i_segment_volume
+      ~local_bifurcation_angle
       ~n_sections
       ~path_length
-      ~segment_length
-      ~segment_radial_dist
-      ~segment_radius
       ~set_tree_type
    
 

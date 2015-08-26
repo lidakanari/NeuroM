@@ -45,6 +45,9 @@ neurom.analysis.morphmath
       ~point_dist2
       ~polygon_diameter
       ~segment_area
+      ~segment_length
+      ~segment_radial_dist
+      ~segment_radius
       ~segment_volume
       ~taper_rate
       ~vector

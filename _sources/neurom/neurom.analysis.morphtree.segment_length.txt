@@ -1,6 +1,0 @@
-neurom.analysis.morphtree.segment_length
-========================================
-
-.. currentmodule:: neurom.analysis.morphtree
-
-.. autofunction:: segment_length

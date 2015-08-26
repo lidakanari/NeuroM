@@ -1,6 +1,6 @@
-neurom.analysis.morphtree.segment_radius
+neurom.analysis.morphtree.i_segment_area
 ========================================
 
 .. currentmodule:: neurom.analysis.morphtree
 
-.. autofunction:: segment_radius
+.. autofunction:: i_segment_area

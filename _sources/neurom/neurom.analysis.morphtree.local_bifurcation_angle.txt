@@ -1,0 +1,6 @@
+neurom.analysis.morphtree.local_bifurcation_angle
+=================================================
+
+.. currentmodule:: neurom.analysis.morphtree
+
+.. autofunction:: local_bifurcation_angle

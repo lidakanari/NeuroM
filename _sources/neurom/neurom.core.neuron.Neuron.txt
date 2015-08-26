@@ -41,6 +41,7 @@ neurom.core.neuron.Neuron
       :nosignatures:
    
       ~Neuron.__init__
+      ~Neuron.i_neurite
    
 
    

@@ -1,0 +1,6 @@
+neurom.ezy.Neuron.iter_sections
+===============================
+
+.. currentmodule:: neurom.ezy
+
+.. automethod:: Neuron.iter_sections

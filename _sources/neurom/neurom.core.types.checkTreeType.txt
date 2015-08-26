@@ -1,0 +1,6 @@
+neurom.core.types.checkTreeType
+===============================
+
+.. currentmodule:: neurom.core.types
+
+.. autofunction:: checkTreeType

@@ -37,7 +37,7 @@ Introduction
 
 NeuroM is a Python-based toolkit for the analysis and processing of neuron morphologies.
 
-This quick start guide contains information on how to install NeuroM and use case examples.
+This quick start guide contains information on how to install NeuroM and use-case examples.
 
 Dependencies
 ============
@@ -50,7 +50,7 @@ The build-time and runtime dependencies of NeuroM are:
 * matplotlib
 * enum34
 
-Additional dependencies needed for testing and building documentation are
+Additional dependencies needed for testing and building documentation are:
 
 * nose
 * coverage
@@ -244,5 +244,5 @@ Examples
 .. code-block:: python
 
     >>> # Initialize nrn as above
-    >>> fig, ax = nrn.plot()
+    >>> fig, ax = nrn.view()
     >>> fig.show()

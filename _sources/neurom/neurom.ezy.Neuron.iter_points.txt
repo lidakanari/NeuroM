@@ -1,0 +1,6 @@
+neurom.ezy.Neuron.iter_points
+=============================
+
+.. currentmodule:: neurom.ezy
+
+.. automethod:: Neuron.iter_points
