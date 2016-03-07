@@ -44,6 +44,8 @@ import yaml
 import os
 import sys
 import json
+import pylab as plt
+import numpy as np
 
 
 DESCRIPTION = '''
@@ -98,13 +100,56 @@ def check_feature(feature, neuron, pop, fargs, test):
     '''Runs a statistical test for a
        selected feature and returns
        True or False according to the results.
+       Also generates the corresponding histogram
+       for the comparison of neuron and pop.
     '''
     neuron_data = nf[feature](neuron)
     pop_data = nf[feature](pop)
 
     results = stats.compare_two(neuron_data, pop_data, getattr(stats.StatTests, test))
 
+    make_plot(feature, neuron_data, pop_data, results)
+
+    print data_json(feature, neuron_data, 'neu', bins=20)
+    print data_json(feature, pop_data, 'pop', bins=20)
+
     return bool(results.dist < fargs)
+
+
+def make_plot(feature, neuron, pop, results):
+    '''Plots the histogram of neuron
+       and population and reports statistical
+       tests results in title.
+    '''
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    ax.hist([neuron, pop], normed=True,
+                   label=['N', 'P'], bins=20)
+
+    plt.title(feature.capitalize().replace('_',' ') + ' KS-test:'
+              ' (dist ' +'{0:.2f}'.format(results.dist) +
+              ', pval ' +'{0:.2f}'.format(results.pvalue) + ')')
+    plt.legend()
+    plt.savefig(feature+'.png')
+    plt.close()
+
+
+def data_json(feature, data, name, bins=20):
+    '''Outputs the histogram of a
+       dataset with selected number of 
+       bins in a json file.
+    '''
+    bin_data, edges = np.histogram(data)
+
+    data = {"name": feature + '-' + name,
+            "type" : "Histogram1D",
+            "data" : {"bin_centres" : (edges[1:] + edges[:-1])/2,
+                      "values" : bin_data},
+            "labels" : {"bin_centres" : feature.capitalize().replace('_',' '),
+                        "value" : "Fraction" }}
+
+    return data
 
 
 def _setup_logging(debug, log_file):
@@ -217,12 +262,12 @@ def validate_morph(f, d, config):
 
 
 # Default check configuration parameters
-CONFIG = {'neuron_checks': ['section_number',
+CONFIG = {'neuron_checks': ['number_of_sections_per_neurite',
                             'section_lengths',
                             'local_bifurcation_angles',
                             'section_path_distances',
                             'section_radial_distances'],
-          'options': {'section_number': 0.1,
+          'options': {'number_of_sections_per_neurite': 0.1,
                       'section_lengths': 0.1,
                       'local_bifurcation_angles': 0.1,
                       'section_path_distances': 0.1,

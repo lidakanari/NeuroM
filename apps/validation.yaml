@@ -44,7 +44,7 @@ stat_test : 'ks'
 
 neuron_checks :
 
-    - section_number
+    - number_of_sections_per_neurite
     - section_lengths
     - local_bifurcation_angles
     - section_path_distances
@@ -57,7 +57,7 @@ neuron_checks :
 options :
     
     # threshold
-    section_number   : 0.1
+    number_of_sections_per_neurite : 0.1
     section_lengths : 0.1
     local_bifurcation_angles : 0.1
     section_path_distances   : 0.1
