@@ -41,13 +41,11 @@ import numpy as _np
 
 from . import _neuritefunc as _nrt
 from . import _neuronfunc as _nrn
-
-from ._core import FstNeuron
 from ..core import NeuriteType as _ntype
 from ..core import iter_neurites as _ineurites
 from ..core.types import tree_type_checker as _is_type
 from ..exceptions import NeuroMError
-
+from ._core import FstNeuron
 
 NEURITEFEATURES = {
     'total_length': _nrt.total_length,
@@ -73,10 +71,15 @@ NEURITEFEATURES = {
     'section_term_branch_orders': _nrt.section_term_branch_orders,
     'section_bif_branch_orders': _nrt.section_bif_branch_orders,
     'section_radial_distances': _nrt.section_radial_distances,
+    'section_bif_radial_distances': _nrt.section_bif_radial_distances,
+    'section_term_radial_distances': _nrt.section_term_radial_distances,
+    'section_end_distances': _nrt.section_end_distances,
+    'section_strahler_orders': _nrt.section_strahler_orders,
     'local_bifurcation_angles': _nrt.local_bifurcation_angles,
     'remote_bifurcation_angles': _nrt.remote_bifurcation_angles,
     'partition': _nrt.bifurcation_partitions,
     'partition_asymmetry': _nrt.partition_asymmetries,
+    'partition_pairs': _nrt.partition_pairs,
     'number_of_segments': _nrt.number_of_segments,
     'segment_lengths': _nrt.segment_lengths,
     'segment_volumes': _nrt.segment_volumes,
@@ -96,6 +99,9 @@ NEURONFEATURES = {
     'trunk_origin_azimuths': _nrn.trunk_origin_azimuths,
     'trunk_origin_elevations': _nrn.trunk_origin_elevations,
     'trunk_section_lengths': _nrn.trunk_section_lengths,
+    'trunk_angles': _nrn.trunk_angles,
+    'trunk_vectors': _nrn.trunk_vectors,
+    'sholl_frequency': _nrn.sholl_frequency,
 }
 
 
@@ -107,7 +113,7 @@ def register_neurite_feature(name, func):
         func: single parameter function of a neurite.
     '''
     if name in NEURITEFEATURES:
-        raise NeuroMError('Attempt to hide registered feature %s', name)
+        raise NeuroMError('Attempt to hide registered feature %s' % name)
 
     def _fun(neurites, neurite_type=_ntype.all):
         '''Wrap neurite function from outer scope and map into list'''
@@ -133,6 +139,7 @@ def get(feature, obj, **kwargs):
                else NEURONFEATURES[feature])
 
     return _np.array(list(feature(obj, **kwargs)))
+
 
 _INDENT = ' ' * 4
 
@@ -162,5 +169,6 @@ def _get_doc():
                for feature, func in sorted(NEURONFEATURES.items()))
 
     return '\n'.join(ret)
+
 
 get.__doc__ += _indent('\nFeatures:\n', 1) + _indent(_get_doc(), 2)  # pylint: disable=no-member

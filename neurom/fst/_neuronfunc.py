@@ -30,9 +30,11 @@
 
 import math
 import numpy as np
+from neurom.geom import bounding_box
 from neurom.core.types import NeuriteType
 from neurom.core.types import tree_type_checker as is_type
 from neurom.core.dataformat import COLS
+from neurom.core._neuron import iter_neurites, iter_segments
 from neurom import morphmath
 
 
@@ -136,3 +138,109 @@ def trunk_origin_elevations(nrn, neurite_type=NeuriteType.all):
     return [_elevation(s.root_node.points, n.soma)
             for n in nrns
             for s in n.neurites if neurite_filter(s)]
+
+
+def trunk_vectors(nrn, neurite_type=NeuriteType.all):
+    '''Calculates the vectors between all the trunks of the neuron
+    and the soma center.
+    '''
+    neurite_filter = is_type(neurite_type)
+    nrns = neuron_population(nrn)
+
+    return np.array([morphmath.vector(s.root_node.points[0], n.soma.center)
+                     for n in nrns
+                     for s in n.neurites if neurite_filter(s)])
+
+
+def trunk_angles(nrn, neurite_type=NeuriteType.all):
+    '''Calculates the angles between all the trunks of the neuron.
+    The angles are defined on the x-y plane and the trees
+    are sorted from the y axis and anticlock-wise.
+    '''
+    vectors = trunk_vectors(nrn, neurite_type=neurite_type)
+    # In order to avoid the failure of the process in case the neurite_type does not exist
+    if not vectors.size:
+        return []
+
+    def _sort_angle(p1, p2):
+        """Angle between p1-p2 to sort vectors"""
+        ang1 = np.arctan2(*p1[::-1])
+        ang2 = np.arctan2(*p2[::-1])
+        return (ang1 - ang2)
+
+    # Sorting angles according to x-y plane
+    order = np.argsort(np.array([_sort_angle(i / np.linalg.norm(i), [0, 1])
+                                 for i in vectors[:, 0:2]]))
+
+    ordered_vectors = vectors[order][:, [COLS.X, COLS.Y]]
+
+    return [morphmath.angle_between_vectors(ordered_vectors[i], ordered_vectors[i - 1])
+            for i, _ in enumerate(ordered_vectors)]
+
+
+def sholl_crossings(neurites, center, radii):
+    '''calculate crossings of neurites
+
+    Args:
+        nrn(morph): morphology on which to perform Sholl analysis
+        radii(iterable of floats): radii for which crossings will be counted
+
+    Returns:
+        Array of same length as radii, with a count of the number of crossings
+        for the respective radius
+    '''
+    def _count_crossings(neurite, radius):
+        '''count_crossings of segments in neurite with radius'''
+        r2 = radius ** 2
+        count = 0
+        for start, end in iter_segments(neurite):
+            start_dist2, end_dist2 = (morphmath.point_dist2(center, start),
+                                      morphmath.point_dist2(center, end))
+
+            count += int(start_dist2 <= r2 <= end_dist2 or
+                         end_dist2 <= r2 <= start_dist2)
+
+        return count
+
+    return np.array([sum(_count_crossings(neurite, r)
+                         for neurite in iter_neurites(neurites))
+                     for r in radii])
+
+
+def sholl_frequency(nrn, neurite_type=NeuriteType.all, step_size=10):
+    '''perform Sholl frequency calculations on a population of neurites
+
+    Args:
+        nrn(morph): nrn or population
+        neurite_type(NeuriteType): which neurites to operate on
+        step_size(float): step size between Sholl radii
+
+    Note:
+        Given a neuron, the soma center is used for the concentric circles,
+        which range from the soma radii, and the maximum radial distance
+        in steps of `step_size`.  When a population is given, the concentric
+        circles range from the smallest soma radius to the largest radial neurite
+        distance.  Finally, each segment of the neuron is tested, so a neurite that
+        bends back on itself, and crosses the same Sholl radius will get counted as
+        having crossed multiple times.
+    '''
+    nrns = neuron_population(nrn)
+    neurite_filter = is_type(neurite_type)
+
+    min_soma_edge = float('Inf')
+    max_radii = 0
+    neurites_list = []
+    for neuron in nrns:
+        neurites_list.extend(((neurites, neuron.soma.center)
+                              for neurites in neuron.neurites
+                              if neurite_filter(neurites)))
+
+        min_soma_edge = min(min_soma_edge, neuron.soma.radius)
+        max_radii = max(max_radii, np.max(np.abs(bounding_box(neuron))))
+
+    radii = np.arange(min_soma_edge, max_radii + step_size, step_size)
+    ret = np.zeros_like(radii)
+    for neurites, center in neurites_list:
+        ret += sholl_crossings(neurites, center, radii)
+
+    return ret

@@ -66,8 +66,6 @@ def assert_items_equal(a, b):
 
 def assert_features_for_neurite(feat, neurons, expected, exact=True):
     for neurite_type, expected_values in expected.items():
-        print('neurite_type: %s' % neurite_type)
-
         if neurite_type is None:
             res_pop = fst_get(feat, neurons)
             res = fst_get(feat, neurons[0])
@@ -803,6 +801,23 @@ def test_soma_surface_areas():
     nt.eq_(fst_get('soma_surface_areas', NEURON), area)
 
 
+def test_sholl_frequency():
+    assert_allclose(fst_get('sholl_frequency', NEURON),
+                    [4, 8, 8, 14, 9, 8, 7, 7])
+
+    assert_allclose(fst_get('sholl_frequency', NEURON, neurite_type=NeuriteType.all),
+                    [4, 8, 8, 14, 9, 8, 7, 7])
+
+    assert_allclose(fst_get('sholl_frequency', NEURON, neurite_type=NeuriteType.apical_dendrite),
+                    [1, 2, 2, 2, 2, 2, 1, 1])
+
+    assert_allclose(fst_get('sholl_frequency', NEURON, neurite_type=NeuriteType.basal_dendrite),
+                    [2, 4, 4, 6, 5, 4, 4, 4])
+
+    assert_allclose(fst_get('sholl_frequency', NEURON, neurite_type=NeuriteType.axon),
+                    [1, 2, 2, 6, 2, 2, 2, 2])
+
+
 @nt.nottest  # test_get_segment_lengths is disabled in test_get_features
 def test_section_path_distances_endpoint():
 
@@ -827,86 +842,16 @@ def test_partition():
 def test_partition_asymmetry():
     nt.ok_(np.allclose(fst_get('partition_asymmetry', NRNS)[:10], np.array([0.9, 0.88888889, 0.875,
                                                                             0.85714286, 0.83333333,
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
                                                                             0.8, 0.75,  0.66666667,
                                                                             0.5,  0.])))
 
-#class MockNeuron:
-#    pass
-#
-#
-#def test_trunk_origin_elevations():
-#    n0 = MockNeuron()
-#    n1 = MockNeuron()
-#
-#    s = make_soma([[0, 0, 0, 4]])
-#    t0 = PointTree((1, 0, 0, 2))
-#    t0.type = NeuriteType.basal_dendrite
-#    t1 = PointTree((0, 1, 0, 2))
-#    t1.type = NeuriteType.basal_dendrite
-#    n0.neurites = [t0, t1]
-#    n0.soma = s
-#
-#    t2 = PointTree((0, -1, 0, 2))
-#    t2.type = NeuriteType.basal_dendrite
-#    n1.neurites = [t2]
-#    n1.soma = s
-#
-#    pop = [n0, n1]
-#    nt.ok_(np.all(fst_get('trunk_origin_elevations', pop) ==
-#                          [0.0, np.pi/2., -np.pi/2.]))
-#    nt.eq_(len(fst_get('trunk_origin_elevations', pop, neurite_type=NeuriteType.axon)), 0)
-#
-#def test_trunk_origin_azimuths():
-#    n0 = MockNeuron()
-#    n1 = MockNeuron()
-#    n2 = MockNeuron()
-#    n3 = MockNeuron()
-#    n4 = MockNeuron()
-#    n5 = MockNeuron()
-#
-#    t = PointTree((0, 0, 0, 2))
-#    t.type = NeuriteType.basal_dendrite
-#    n0.neurites = [t]
-#    n1.neurites = [t]
-#    n2.neurites = [t]
-#    n3.neurites = [t]
-#    n4.neurites = [t]
-#    n5.neurites = [t]
-#    pop = [n0, n1, n2, n3, n4, n5]
-#    s0 = make_soma([[0, 0, 1, 4]])
-#    s1 = make_soma([[0, 0, -1, 4]])
-#    s2 = make_soma([[0, 0, 0, 4]])
-#    s3 = make_soma([[-1, 0, -1, 4]])
-#    s4 = make_soma([[-1, 0, 0, 4]])
-#    s5 = make_soma([[1, 0, 0, 4]])
-#
-#    pop[0].soma = s0
-#    pop[1].soma = s1
-#    pop[2].soma = s2
-#    pop[3].soma = s3
-#    pop[4].soma = s4
-#    pop[5].soma = s5
-#    nt.ok_(np.all(fst_get('trunk_origin_azimuths', pop) ==
-#                          [-np.pi/2., np.pi/2., 0.0, np.pi/4., 0.0, np.pi]))
-#    nt.eq_(len(fst_get('trunk_origin_azimuths', pop, neurite_type=NeuriteType.axon)), 0)
 
-#def test_principal_directions_extents():
-#    points = np.array([[-10., 0., 0.],
-#                       [-9., 0., 0.],
-#                       [9., 0., 0.],
-#                       [10., 0., 0.]])
-#
-#    tree = PointTree(np.array([points[0][0], points[0][1], points[0][2], 1., 0., 0.]))
-#    tree.add_child(PointTree(np.array([points[1][0], points[1][1], points[1][2], 1., 0., 0.])))
-#    tree.children[0].add_child(PointTree(np.array([points[2][0], points[2][1], points[2][2], 1., 0., 0.])))
-#    tree.children[0].add_child(PointTree(np.array([points[3][0], points[3][1], points[3][2], 1., 0., 0.])))
-#
-#    neurites = [tree, tree, tree]
-#    extents0 = fst_get('principal_direction_extents', neurites, direction='first')
-#    nt.ok_(np.allclose(extents0, [20., 20., 20.]))
-#    extents1 = fst_get('principal_direction_extents', neurites, direction='second')
-#    nt.ok_(np.allclose(extents1, [0., 0., 0.]))
-#    extents2 = fst_get('principal_direction_extents', neurites, direction='third')
-#    nt.ok_(np.allclose(extents2, [0., 0., 0.]))
-
-
+def test_section_strahler_orders():
+    path = os.path.join(SWC_PATH, 'strahler.swc')
+    n = nm.load_neuron(path)
+    assert_allclose(fst_get('section_strahler_orders', n),
+                    [4, 1, 4, 3, 2, 1, 1, 2, 1, 1, 3, 1, 3, 2, 1, 1, 2, 1, 1])

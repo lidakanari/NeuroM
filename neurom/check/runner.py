@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 # Copyright (c) 2015, Ecole Polytechnique Federale de Lausanne, Blue Brain Project
 # All rights reserved.
 #
@@ -30,46 +29,35 @@
 
 '''runner for neuron morphology checks'''
 
-from importlib import import_module
-import os
 import logging
-from neurom.io.utils import get_morph_files
-from neurom.io import load_data
+from importlib import import_module
+
+from future.moves.collections import OrderedDict
+
+from neurom.check import check_wrapper
 from neurom.exceptions import ConfigError
 from neurom.fst import _core as fst_core
-from neurom.check import check_wrapper
-from neurom._compat import OrderedDict
+from neurom.io import load_data, utils
 
 L = logging.getLogger(__name__)
 
 
 class CheckRunner(object):
     '''Class managing checks, config and output'''
+
     def __init__(self, config):
         self._config = CheckRunner._sanitize_config(config)
         self._check_modules = dict((k, import_module('neurom.check.%s' % k))
                                    for k in config['checks'])
 
-    def run(self, file_path):
+    def run(self, path):
         '''Test a bunch of files and return a summary JSON report'''
-
-        def _get_files():
-            '''Get a file or set of files from a file path'''
-            if os.path.isfile(file_path):
-                return [file_path]
-            elif os.path.isdir(file_path):
-                L.info('Checking files in directory %s', file_path)
-                return get_morph_files(file_path)
-            else:
-                msg = 'Invalid data path %s' % file_path
-                L.error(msg)
-                raise IOError(msg)
 
         SEPARATOR = '=' * 40
         summary = {}
         res = True
 
-        for _f in _get_files():
+        for _f in utils.get_files_by_path(path):
             L.info(SEPARATOR)
             status, summ = self._check_file(_f)
             res &= status
@@ -95,10 +83,10 @@ class CheckRunner(object):
             out = check_wrapper(getattr(check_module, check_str))(obj)
 
         try:
-            if len(out.info) > 0:
+            if out.info:
                 L.debug('%s: %d failing ids detected: %s',
                         out.title, len(out.info), out.info)
-        except TypeError:
+        except TypeError:  # pragma: no cover
             pass
 
         return out
@@ -124,7 +112,7 @@ class CheckRunner(object):
         full_summary = OrderedDict()
         try:
             data = load_data(f)
-        except Exception as e: # pylint: disable=W0703
+        except Exception as e:  # pylint: disable=W0703
             L.error('Failed to load data... skipping tests for this file')
             L.error(e.args)
             return False, {f: OrderedDict([('ALL', False)])}
@@ -158,6 +146,7 @@ class CheckRunner(object):
 
         LOG_LEVELS = {False: logging.ERROR, True: logging.INFO}
 
+        # pylint: disable=logging-not-lazy
         L.log(LOG_LEVELS[ok],
               '%35s %s' + CEND, msg, CGREEN + 'PASS' if ok else CRED + 'FAIL')
 

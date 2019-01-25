@@ -43,9 +43,9 @@ There is one such row per measured point.
 
 import h5py
 import numpy as np
+from future.moves.itertools import zip_longest
 
-from .datawrapper import DataWrapper, BlockNeuronBuilder
-from neurom._compat import zip_longest
+from .datawrapper import BlockNeuronBuilder, DataWrapper
 
 
 def get_version(h5file):
@@ -57,6 +57,7 @@ def get_version(h5file):
         return 'H5V1'
     elif 'neuron1/structure' in h5file:
         return 'H5V2'
+    return None
 
 
 POINT_DIAMETER = 3

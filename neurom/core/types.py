@@ -28,11 +28,24 @@
 
 '''Type enumerations'''
 
-from enum import Enum, unique
+from enum import unique
+
+from neurom.utils import OrderedEnum
 
 
 @unique
-class NeuriteType(Enum):
+class NeuriteIter(OrderedEnum):
+    '''Neurite iteration orders'''
+    FileOrder = 1  # Order in which neurites appear in the file
+
+    # NRN simulator order: soma -> axon -> basal -> apical
+    # Coming from:
+    # https://github.com/neuronsimulator/nrn/blob/2dbf2ebf95f1f8e5a9f0565272c18b1c87b2e54c/share/lib/hoc/import3d/import3d_gui.hoc#L874
+    NRN = 2
+
+
+@unique
+class NeuriteType(OrderedEnum):
     '''Enum representing valid tree types'''
     undefined = 1
     soma = 2
@@ -40,6 +53,14 @@ class NeuriteType(Enum):
     basal_dendrite = 4
     apical_dendrite = 5
     all = 32
+
+
+NEURITES = (NeuriteType.all,
+            NeuriteType.axon,
+            NeuriteType.basal_dendrite,
+            NeuriteType.apical_dendrite)
+
+ROOT_ID = -1
 
 
 def tree_type_checker(*ref):
@@ -71,10 +92,11 @@ def tree_type_checker(*ref):
     return check_tree_type
 
 
-NEURITES = (NeuriteType.all,
-            NeuriteType.axon,
-            NeuriteType.basal_dendrite,
-            NeuriteType.apical_dendrite)
+def dendrite_filter(n):
+    '''Select only dendrites'''
+    return n.type == NeuriteType.basal_dendrite or n.type == NeuriteType.apical_dendrite
 
 
-ROOT_ID = -1
+def axon_filter(n):
+    '''Select only axons'''
+    return n.type == NeuriteType.axon
