@@ -33,7 +33,7 @@ from itertools import chain
 import numpy as np
 
 from neurom import morphmath
-from neurom.core import Tree, iter_neurites, iter_sections, NeuriteType
+from neurom.core import Tree, iter_neurites, iter_sections, iter_segments, NeuriteType
 from neurom.core.dataformat import COLS
 from neurom.core.types import tree_type_checker as is_type
 from neurom.fst import _bifurcationfunc
@@ -326,6 +326,20 @@ def section_radial_distances(neurites, neurite_type=NeuriteType.all, origin=None
     for n in iter_neurites(neurites, filt=is_type(neurite_type)):
         pos = n.root_node.points[0] if origin is None else origin
         dist.extend(sectionfunc.section_radial_distance(s, pos)
+                    for s in iter_sections(n,
+                                           iterator_type=iterator_type))
+    return dist
+
+
+def section_radii_average(neurites, neurite_type=NeuriteType.all, origin=None,
+                          iterator_type=Tree.ipreorder):
+    '''Section radii average in a collection of neurites.
+    The iterator_type can be used to select only terminal sections (ileaf)
+    or only bifurcations (ibifurcation_point).'''
+    dist = []
+    for n in iter_neurites(neurites, filt=is_type(neurite_type)):
+        radii = pos = n.root_node.points[0] if origin is None else origin
+        dist.extend(np.mean(s.points[:,COLS.R])
                     for s in iter_sections(n,
                                            iterator_type=iterator_type))
     return dist

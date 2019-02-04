@@ -71,6 +71,7 @@ NEURITEFEATURES = {
     'section_term_branch_orders': _nrt.section_term_branch_orders,
     'section_bif_branch_orders': _nrt.section_bif_branch_orders,
     'section_radial_distances': _nrt.section_radial_distances,
+    'section_radii': _nrt.section_radii_average,
     'section_bif_radial_distances': _nrt.section_bif_radial_distances,
     'section_term_radial_distances': _nrt.section_term_radial_distances,
     'section_end_distances': _nrt.section_end_distances,
