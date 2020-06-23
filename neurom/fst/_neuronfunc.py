@@ -207,7 +207,7 @@ def sholl_crossings(neurites, center, radii):
                      for r in radii])
 
 
-def sholl_frequency(nrn, neurite_type=NeuriteType.all, step_size=10):
+def sholl_frequency(nrn, neurite_type=NeuriteType.all, step_size=10, bins=None):
     '''perform Sholl frequency calculations on a population of neurites
 
     Args:
@@ -227,18 +227,21 @@ def sholl_frequency(nrn, neurite_type=NeuriteType.all, step_size=10):
     nrns = neuron_population(nrn)
     neurite_filter = is_type(neurite_type)
 
-    min_soma_edge = float('Inf')
-    max_radii = 0
-    neurites_list = []
-    for neuron in nrns:
-        neurites_list.extend(((neurites, neuron.soma.center)
-                              for neurites in neuron.neurites
-                              if neurite_filter(neurites)))
+    if bins is None:
+        min_soma_edge = float('Inf')
+        max_radii = 0
+        neurites_list = []
+        for neuron in nrns:
+            neurites_list.extend(((neurites, neuron.soma.center)
+                                  for neurites in neuron.neurites
+                                  if neurite_filter(neurites)))
 
-        min_soma_edge = min(min_soma_edge, neuron.soma.radius)
-        max_radii = max(max_radii, np.max(np.abs(bounding_box(neuron))))
+            min_soma_edge = min(min_soma_edge, neuron.soma.radius)
+            max_radii = max(max_radii, np.max(np.abs(bounding_box(neuron))))
 
-    radii = np.arange(min_soma_edge, max_radii + step_size, step_size)
+        radii = np.arange(min_soma_edge, max_radii + step_size, step_size)
+    else:
+        radii = bins
     ret = np.zeros_like(radii)
     for neurites, center in neurites_list:
         ret += sholl_crossings(neurites, center, radii)
